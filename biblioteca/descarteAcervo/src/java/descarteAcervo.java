@@ -1,6 +1,8 @@
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -12,39 +14,54 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = {"/descarteAcervo"})
 public class descarteAcervo extends HttpServlet {
-    
+
     // Constantes de conexão ao MYSQL
-    final String SERVIDOR_SQL = "",
-          USUARIO_ADMIN_SQL = "root",
-          SENHA_ADMIN_SQL = "";
-    
-    
+    final String SERVIDOR_SQL = "jdbc:mysql://localhost:3307/biblioteca",
+	    USUARIO_ADMIN_SQL = "root",
+	    SENHA_ADMIN_SQL = "123456";
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        // Receber parametros do descarte de acervo
-        String id_funcionario = request.getParameter("funcionario"),
-               id_acervo = request.getParameter("acervo"),
-               motivo = request.getParameter("motivacao"),
-               data = request.getParameter("data");
-                
-        try (PrintWriter out = response.getWriter()) {
-            
-            try{
-                // Query SQL de inserção na tabela DESCARTES
-                // id_acervo e id_funcionario não estão sendo tratados como string e por isso não possue aspas na query
-                String query = "INSERT INTO DESCARTES(id-acervo, Data-descarte, Motivos, Operador) VALUES ("+id_acervo+",'"+data+"','"+motivo+"',"+id_funcionario+")";
-                
-                // Conecta e executa Query SQL 
-                Connection conexao = DriverManager.getConnection(SERVIDOR_SQL,USUARIO_ADMIN_SQL,SENHA_ADMIN_SQL);
-                PreparedStatement st = conexao.prepareStatement(query);
-                st.executeUpdate();
-                
-            }catch(SQLException e){
-                out.println("ERRO DE GRAVACAO/CONEXÃO NA TABELA 'DESCARTES' - "+e.getMessage());
-                return;
-            }
-        }
+	    throws ServletException, IOException {
+
+	// Receber parametros do descarte de acervo
+	String id_acervo_string = request.getParameter("acervo"),
+		data = request.getParameter("data"),
+		motivo = request.getParameter("motivacao"),
+		id_funcionario = request.getParameter("funcionario");
+
+	int id_acervo = Integer.parseInt(id_acervo_string);
+	Date date = Date.valueOf(data);
+
+	try (PrintWriter out = response.getWriter()) {
+
+	    try {
+		// Query SQL de inserção na tabela DESCARTES
+		// id_acervo e id_funcionario não estão sendo tratados como string e por isso não possue aspas na query
+		String query = "INSERT INTO descartes(idAcervo,dataDescarte , motivos, operador) VALUES (?,?,?,?)";
+
+		// Conecta e executa Query SQL
+		DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+		Connection conexao = DriverManager.getConnection(SERVIDOR_SQL, USUARIO_ADMIN_SQL, SENHA_ADMIN_SQL);
+		PreparedStatement st = conexao.prepareStatement(query);
+
+		st.setInt(1, id_acervo); //id-acervo
+		st.setDate(2, date); //data-descarte
+		st.setString(3, motivo); // motivos
+		st.setString(4, id_funcionario); //operador
+
+		int res = st.executeUpdate();
+		st.close();
+		conexao.close();
+
+		if (res == 1) {
+		    out.println("Acervo " + id_acervo + " foi descartado!");
+		}
+
+	    } catch (SQLException e) {
+		out.println("ERRO DE GRAVACAO/CONEXÃO NA TABELA 'DESCARTES' - " + e.getMessage());
+		return;
+	    }
+	}
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -58,8 +75,8 @@ public class descarteAcervo extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+	    throws ServletException, IOException {
+	processRequest(request, response);
     }
 
     /**
@@ -72,8 +89,8 @@ public class descarteAcervo extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+	    throws ServletException, IOException {
+	processRequest(request, response);
     }
 
     /**
@@ -83,7 +100,7 @@ public class descarteAcervo extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+	return "Short description";
     }// </editor-fold>
 
 }
