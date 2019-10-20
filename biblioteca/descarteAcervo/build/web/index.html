@@ -23,5 +23,27 @@ and open the template in the editor.
             <label>Motivação: <textarea name="motivacao"></textarea></label>
             <button>Enviar</button>
         </form>
+
+	<h2>Acervos Descartados</h2>
+
+	<pre id="acervos">
+
+	</pre>
+
+
+	<script>
+            const container_resultados = document.querySelector("#acervos");
+            function pegaTabela(link) {
+                return (fetch(link).then(res => res.text()));
+            }
+
+            async function insereDescartesContainer() {
+                let resultado = await pegaTabela("acervosDescartados");
+                container_resultados.innerHTML = resultado;
+            }
+
+            insereDescartesContainer();
+
+	</script>
     </body>
 </html>

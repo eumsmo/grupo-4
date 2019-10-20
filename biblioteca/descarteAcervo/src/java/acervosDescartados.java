@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -5,6 +10,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,8 +18,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/descarteAcervo"})
-public class descarteAcervo extends HttpServlet {
+/**
+ *
+ * @author juanr
+ */
+@WebServlet(urlPatterns = {"/acervosDescartados"})
+public class acervosDescartados extends HttpServlet {
 
     // Constantes de conexão ao MYSQL
     final String SERVIDOR_SQL = "jdbc:mysql://localhost:3307/biblioteca",
@@ -23,41 +33,44 @@ public class descarteAcervo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 
-	// Receber parametros do descarte de acervo
-	String id_acervo_string = request.getParameter("acervo"),
-		data = request.getParameter("data"),
-		motivo = request.getParameter("motivacao"),
-		id_funcionario = request.getParameter("funcionario");
+	String id_acervo = request.getParameter("acervo");
 
-	int id_acervo = Integer.parseInt(id_acervo_string);
-	Date date = Date.valueOf(data);
+	Boolean pesquisa_especifica = !(id_acervo == null || id_acervo == "");
 
 	try (PrintWriter out = response.getWriter()) {
 
 	    try {
-		// Query SQL de inserção na tabela DESCARTES
-		String query = "INSERT INTO descartes(idAcervo,dataDescarte , motivos, operador) VALUES (?,?,?,?)";
+		// Query SQL de seleção de todos valores da tabela DESCARTES
+		String query;
+
+		if (pesquisa_especifica) {
+		    query = "SELECT * FROM descartes WHERE idAcervo=" + id_acervo;
+		} else {
+		    query = "SELECT * FROM descartes";
+		}
 
 		// Conecta e executa Query SQL
 		DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 		Connection conexao = DriverManager.getConnection(SERVIDOR_SQL, USUARIO_ADMIN_SQL, SENHA_ADMIN_SQL);
 		PreparedStatement st = conexao.prepareStatement(query);
 
-		st.setInt(1, id_acervo); //id-acervo
-		st.setDate(2, date); //data-descarte
-		st.setString(3, motivo); // motivos
-		st.setString(4, id_funcionario); //operador
+		ResultSet resultado = st.executeQuery();
 
-		int res = st.executeUpdate();
+		// Itera pelo resultado do SQL
+		while (resultado.next()) {
+		    int acervo = resultado.getInt("idAcervo");
+		    Date data = resultado.getDate("dataDescarte");
+		    String motivo = resultado.getString("motivos"),
+			    id_funcionario = resultado.getString("operador");
+
+		    out.println("acervo: " + acervo + ", data: " + data + ", motivo: '" + motivo + "', operador: " + id_funcionario);
+		}
+
 		st.close();
 		conexao.close();
 
-		if (res == 1) {
-		    out.println("Acervo " + id_acervo + " foi descartado!");
-		}
-
 	    } catch (SQLException e) {
-		out.println("ERRO DE GRAVACAO/CONEXÃO NA TABELA 'DESCARTES' - " + e.getMessage());
+		out.println("ERRO DE LEITURA/CONEXÃO NA TABELA 'DESCARTES' - " + e.getMessage());
 		return;
 	    }
 	}
