@@ -11,6 +11,12 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <form action="NotasServlet" method="get">
+            <label>id_disciplinas <input name="id_disciplinas" type="number"> </label>
+            <label>nome <input name="nome" type="text"> </label>
+            <label>data <input name="data" type="date"> </label>
+            <label>valor <input name="valor" type="number" step="0.01"> </label>
+            <button type="submit">Enviar</button>
+        </form>
     </body>
 </html>
