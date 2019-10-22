@@ -6,6 +6,12 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,23 +35,47 @@ public class inserirConteudos extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         final String SERVIDOR_SQL = "jdbc:mysql://localhost:3307/biblioteca",
 	    USUARIO_ADMIN_SQL = "root",
 	    SENHA_ADMIN_SQL = "123456";
+        
+        String id_etapas_string = request.getParameter("etapas"),
+                id_disciplinas = request.getParameter("disciplinas") ,
+		conteudos = request.getParameter("conteudos"),
+		datas = request.getParameter("datas");
+            
+                int id_etapas = Integer.parseInt(id_etapas_string);
+                Date date = Date.valueOf(datas);
+                
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
+                
+                // Query SQL de inserção na tabela DESCARTES
+		String query = "INSERT INTO conteudos(idEtapas,idDisciplinas , conteudos , datas) VALUES (?,?,?,?)";
+
+		// Conecta e executa Query SQL
+		DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+		Connection conexao = DriverManager.getConnection(SERVIDOR_SQL, USUARIO_ADMIN_SQL, SENHA_ADMIN_SQL);
+		PreparedStatement st = conexao.prepareStatement(query);
+
+		st.setInt(1, id_etapas); //id-etapas
+		st.setString(2, id_disciplinas); //id-disciplinas
+		st.setString(3, conteudos); // conteudos
+		st.setDate(4, date); //datas
+
+		int res = st.executeUpdate();
+		st.close();
+		conexao.close();
+
+
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet inserirConteudos</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet inserirConteudos at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+           
+        } catch (SQLException e) {
+		out.println("ERRO DE GRAVACAO/CONEXÃO NA TABELA 'CONTEUDOS' - " + e.getMessage());
+		return;
+	    }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
