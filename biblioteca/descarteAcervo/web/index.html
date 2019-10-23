@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            label{display:block; margin: 1em 0;}
+            textarea{vertical-align: top; width: 30em; height: 10em}
+        </style>
+    </head>
+    <body>
+        <!-- HTML provisório para testar o backend -->
+        <form action="descarteAcervo" method="get">
+            <label>ID do acervo: <input name="acervo" type="text"></label>
+            <label>ID do funcionario: <input name="funcionario" type="text"></label>
+            <label>Data de descarte: <input name="data" type="date"></label>
+            <label>Motivação: <textarea name="motivacao"></textarea></label>
+            <button>Enviar</button>
+        </form>
+
+	<h2>Acervos Descartados</h2>
+
+	<pre id="acervos">
+
+	</pre>
+
+
+	<script>
+            const container_resultados = document.querySelector("#acervos");
+            function pegaTabela(link) {
+                return (fetch(link).then(res => res.text()));
+            }
+
+            async function insereDescartesContainer() {
+                let resultado = await pegaTabela("acervosDescartados");
+                container_resultados.innerHTML = resultado;
+            }
+
+            insereDescartesContainer();
+
+	</script>
+    </body>
+</html>
