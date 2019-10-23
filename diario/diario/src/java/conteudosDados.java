@@ -47,7 +47,7 @@ public class conteudosDados extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
            try{
             String query;
-           query = "SELECT * FROM descartes";
+           query = "SELECT * FROM conteudos";
            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 		Connection conexao = DriverManager.getConnection(SERVIDOR_SQL, USUARIO_ADMIN_SQL, SENHA_ADMIN_SQL);
 		PreparedStatement st = conexao.prepareStatement(query);
