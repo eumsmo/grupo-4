@@ -21,11 +21,12 @@ h1
 	color: #FDFBF9;
 }
 
-.container
+#conteudo
 {
-	background-color: #E5E5E5;
-	margin-left: 5%; margin-right: 5%;
-	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 90% !important;
+	background-color: #e5e5e5;
 	height: 70vh;
 }
 
