@@ -46,7 +46,7 @@ and open the template in the editor.
                   </tr>
                 </thead>
 
-                <tbody>
+                <tbody id="holder_descartados">
                   <tr>
                     <td>01</td>
                     <td>blaablablabla</td>
@@ -97,25 +97,12 @@ and open the template in the editor.
 	</pre>
 
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-	<script>
-
-            $(document).ready(function(){
-                $('.modal').modal();
-            });
-
-            /*const container_resultados = document.querySelector("#acervos");
-            function pegaTabela(link) {
-                return (fetch(link).then(res => res.text()));
-            }
-
-            async function insereDescartesContainer() {
-                let resultado = await pegaTabela("acervosDescartados");
-                container_resultados.innerHTML = resultado;
-            }
-
-            insereDescartesContainer();*/
-
-	</script>
+  	<script>
+              $(document).ready(function(){
+                  $('.modal').modal();
+              });
+  	</script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/ajax.js" charset="utf-8"></script>
     </body>
 </html>

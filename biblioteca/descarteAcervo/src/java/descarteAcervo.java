@@ -33,15 +33,16 @@ public class descarteAcervo extends HttpServlet {
 	Date date = Date.valueOf(data);
 
 	try (PrintWriter out = response.getWriter()) {
-
+            out.println("<info>");
 	    try {
 		// Query SQL de inserção na tabela DESCARTES
-		String query = "INSERT INTO descartes(idAcervo,dataDescarte , motivos, operador) VALUES (?,?,?,?)";
-
+		String query = "INSERT INTO descartes(`id-acervo`,`data-descarte`, motivos, operador) VALUES (?,?,?,?)";
+                String queryDelete = "DELETE FROM acervo WHERE id="+id_acervo;
 		// Conecta e executa Query SQL
 		DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 		Connection conexao = DriverManager.getConnection(SERVIDOR_SQL, USUARIO_ADMIN_SQL, SENHA_ADMIN_SQL);
-		PreparedStatement st = conexao.prepareStatement(query);
+                conexao.createStatement().executeUpdate(queryDelete);
+                PreparedStatement st = conexao.prepareStatement(query);
 
 		st.setInt(1, id_acervo); //id-acervo
 		st.setDate(2, date); //data-descarte
@@ -52,14 +53,15 @@ public class descarteAcervo extends HttpServlet {
 		st.close();
 		conexao.close();
 
-		if (res == 1) {
-		    out.println("Acervo " + id_acervo + " foi descartado!");
-		}
+		String xml = RespostaXML.sucesso("Acervo " + id_acervo + " foi descartado!");
+		out.print(xml);
+		
 
 	    } catch (SQLException e) {
-		out.println("ERRO DE GRAVACAO/CONEXÃO NA TABELA 'DESCARTES' - " + e.getMessage());
-		return;
+		out.print(RespostaXML.erro("Erro no banco de dados!", e.getMessage()));
+                e.printStackTrace();
 	    }
+            out.println("</info>");
 	}
     }
 

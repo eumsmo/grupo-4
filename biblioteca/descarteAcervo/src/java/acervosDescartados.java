@@ -38,13 +38,13 @@ public class acervosDescartados extends HttpServlet {
 	Boolean pesquisa_especifica = !(id_acervo == null || id_acervo == "");
 
 	try (PrintWriter out = response.getWriter()) {
-
+            out.println("<info>");
 	    try {
 		// Query SQL de seleção de todos valores da tabela DESCARTES
 		String query;
 
 		if (pesquisa_especifica) {
-		    query = "SELECT * FROM descartes WHERE idAcervo=" + id_acervo;
+		    query = "SELECT * FROM descartes WHERE `id-acervo`=" + id_acervo;
 		} else {
 		    query = "SELECT * FROM descartes";
 		}
@@ -56,24 +56,20 @@ public class acervosDescartados extends HttpServlet {
 
 		ResultSet resultado = st.executeQuery();
 
-		// Itera pelo resultado do SQL
-		while (resultado.next()) {
-		    int acervo = resultado.getInt("idAcervo");
-		    Date data = resultado.getDate("dataDescarte");
-		    String motivo = resultado.getString("motivos"),
-			    id_funcionario = resultado.getString("operador");
-
-		    out.println("acervo: " + acervo + ", data: " + data + ", motivo: '" + motivo + "', operador: " + id_funcionario);
-		}
-
+                String xml = RespostaXML.retornaSet(resultado, "id-acervo","data-descarte","motivos","operador");
+                
+                out.print(xml);
+                
 		st.close();
 		conexao.close();
 
 	    } catch (SQLException e) {
-		out.println("ERRO DE LEITURA/CONEXÃO NA TABELA 'DESCARTES' - " + e.getMessage());
-		return;
+                out.print(RespostaXML.erro("Erro no banco de dados!", e.getMessage()));
+                e.printStackTrace();
 	    }
+            out.println("</info>");
 	}
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
