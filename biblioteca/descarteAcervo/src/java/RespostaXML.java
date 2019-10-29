@@ -8,16 +8,20 @@ import java.sql.SQLException;
  */
 public class RespostaXML {
     public static String erro(String mensagem, String causa){
-        return "<erro>\n"+
+        return  "<info>\n"+
+                "<erro>\n"+
                 "<mensagem>"+mensagem+"</mensagem>\n"+
                 "<causa>"+causa+"</causa>\n"+
-                "</erro>\n";
+                "</erro>\n"+
+                "</info>";
     }
     
     public static String erro(String mensagem){
-        return "<erro>\n"+
+        return  "<info>\n"+
+                "<erro>\n"+
                 "<mensagem>"+mensagem+"</mensagem>\n"+
-                "</erro>\n";
+                "</erro>\n"+
+                "</info>";
     }
     
     public static String erro(){
@@ -25,16 +29,20 @@ public class RespostaXML {
     }
     
     public static String sucesso(String mensagem, String causa){
-        return "<sucesso>\n"+
+        return  "<info>\n"+
+                "<sucesso>\n"+
                 "<mensagem>"+mensagem+"</mensagem>\n"+
                 "<causa>"+causa+"</causa>\n"+
-                "</sucesso>\n";
+                "</sucesso>\n"+
+                "</info>";
     }
     
     public static String sucesso(String mensagem){
-        return "<sucesso>\n"+
+        return  "<info>\n"+
+                "<sucesso>\n"+
                 "<mensagem>"+mensagem+"</mensagem>\n"+
-                "</sucesso>\n";
+                "</sucesso>\n"+
+                "</info>";
     }
     
     public static String sucesso(){
@@ -42,7 +50,7 @@ public class RespostaXML {
     }
     
     public static String retornaSet(ResultSet resultados, String ...campos) throws SQLException{
-        String resultado = "";
+        String resultado = "<info>\n";
         while(resultados.next()){
             String nome = resultados.getMetaData().getTableName(1);
             resultado+="<"+nome+">\n";
@@ -52,6 +60,6 @@ public class RespostaXML {
             }
             resultado+="</"+nome+">\n";
         }
-        return resultado;
+        return resultado+"</info>";
     }
 }

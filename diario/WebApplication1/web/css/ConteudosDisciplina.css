@@ -1,0 +1,12 @@
+@import url(https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat);
+body{
+  margin: 20px;
+  padding: 10px;
+}
+p{
+text-align: justify;
+font-size: 15px;
+margin-left: 20px;
+margin-right: 20px;
+
+}
