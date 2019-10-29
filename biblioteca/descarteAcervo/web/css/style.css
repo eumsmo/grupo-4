@@ -134,3 +134,12 @@ thead
 	border-bottom: 1px solid #29A58C;
 	text-transform: uppercase;
 }
+
+/* Toast */
+.erro{
+	background-color: #E53935;
+}
+
+.sucesso{
+	background-color: #00E676;
+}

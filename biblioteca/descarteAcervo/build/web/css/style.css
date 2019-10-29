@@ -120,7 +120,7 @@ th
 
 th:nth-of-type(2)
 {
-	width: 60%;
+	width: 80%;
 }
 
 th:nth-of-type(3)
@@ -133,4 +133,13 @@ thead
 	color: #29A58C;
 	border-bottom: 1px solid #29A58C;
 	text-transform: uppercase;
+}
+
+/* Toast */
+.erro{
+	background-color: #E53935;
+}
+
+.sucesso{
+	background-color: #00E676;
 }
