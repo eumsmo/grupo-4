@@ -38,7 +38,7 @@ public class acervosDescartados extends HttpServlet {
 	Boolean pesquisa_especifica = !(id_acervo == null || id_acervo == "");
 
 	try (PrintWriter out = response.getWriter()) {
-            out.println("<info>");
+            
 	    try {
 		// Query SQL de seleção de todos valores da tabela DESCARTES
 		String query;
@@ -67,7 +67,7 @@ public class acervosDescartados extends HttpServlet {
                 out.print(RespostaXML.erro("Erro no banco de dados!", e.getMessage()));
                 e.printStackTrace();
 	    }
-            out.println("</info>");
+            
 	}
         
     }
