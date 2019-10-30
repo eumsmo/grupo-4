@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Diário Aluno</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="css/styleDiario.css" media="screen" />
+  </head>
+
+  <body>
+        <h1>Dados Pessoais</h1>
+        <!-- devem ser pegos usando a matrícula dos alunos -->
+        <div class="blue-grey lighten-5 row instrução" id="dados_professor">
+              <div class="col s5"> <h6 class="teal-text">CPF</h6> <p class="campo">9999999</p></div>
+              <div class="col s5"> <h6 class="teal-text">Nome</h6><p class="campo">JOÃO DE SANTO CRISTO</p> </div>
+              <div class="col s7"> <h6 class="teal-text">Sexo</h6> <p class="campo">MASCULINO</p> </div>
+              <div class="col s4"> <h6 class="teal-text">Nascimento </h6> <p class="campo">22/01/2001</p> </div>
+              <div class="col s5"> <h6 class="teal-text">Email</h6> <p class="campo">joãodesantocristo@legiaourbana.com</p></div>
+        </div>
+
+    <h1>Boletim Acadêmico</h1>
+    <div id="listagemAcademica">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>DISCIPLINA</th>
+              <th>FALTAS</th>
+              <th>NOTAS</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+        
+          <tbody id="holder_diario">
+            <tr>
+              <td>001</td>
+              <td>AULA DE PEBOLIM</td>
+              <td>A</td>
+              <td>22</td>
+              <td><a href="" class="waves-effect waves-light btn modal-trigger">Ver Conteúdos</a></td>
+              <td><a href="" class="waves-effect waves-light btn modal-trigger">Ver Atividades</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- modal para o aluno ver o conteúdo da disciplina -->
+
+        <!-- modal para o aluno ver as atividades da disciplina -->
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/materialize.js"></script>
+  </body>
+</html>

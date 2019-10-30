@@ -1,11 +1,7 @@
 @import url(https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat);
 
-body{
-  margin: 20px;
-  padding: 10px;
-}
-
-#dados_professor, #dados_titulo{
+#dados_professor, #dados_titulo
+{
   width: 70%;
 }
 
@@ -14,8 +10,6 @@ body{
 }
 
 #diario{
-  width: 100%;
-  margin: 0;
 }
 
 #diario th, #diario td{
