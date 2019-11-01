@@ -1,0 +1,17 @@
+@import url(https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat);
+
+.campo{
+  font-size: 1rem;
+}
+#diario{
+margin-left: 0px;
+margin-right: 0px;
+}
+
+#diario th, #diario td{
+  text-align: center;
+}
+
+#diario td{
+  font-size: 13px;
+}
