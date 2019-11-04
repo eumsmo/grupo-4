@@ -12,7 +12,7 @@
 
             @Override
             public void start(Stage stage) throws Exception {
-                Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/TabelaDepartamentos.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/TabelaDescartes.fxml"));
 
                 Scene scene = new Scene(root);
                 scene.getStylesheets().add(getClass().getResource("resources/styles.css").toExternalForm());
