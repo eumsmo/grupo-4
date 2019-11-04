@@ -11,12 +11,15 @@
   </head>
 
   <body>
-    <h1> Dados Pessoais </h1>
-    <div class="blue-grey lighten-5 row instrução" id="dados_professor">
-          <div class="col s5"> <h6 class="teal-text">ID (SIAPE) </h6> <p class="campo">9999999</p></div>
-          <div class="col s5"> <h6 class="teal-text">ID Departamento</h6><p class="campo">00000001</p> </div>
-          <div class="col s7"> <h6 class="teal-text">Nome</h6> <p class="campo">MARÍLIA MENDONÇA DA SILVA</p> </div>
-          <div class="col s4"> <h6 class="teal-text">Titulação </h6> <p class="campo">DOUTORADO</p> </div>
+
+    <div style="width:60%;margin-left: 2%;">
+      <h1> Dados Pessoais </h1>
+      <div class="blue-grey lighten-5 row instrução" id="dados_professor">
+            <div class="col s6"> <h6 class="teal-text">ID (SIAPE) </h6> <p class="campo">9999999</p></div>
+            <div class="col s6"> <h6 class="teal-text">ID Departamento</h6><p class="campo">00000001</p> </div>
+            <div class="col s6"> <h6 class="teal-text">Nome</h6> <p class="campo">MARÍLIA MENDONÇA DA SILVA</p> </div>
+            <div class="col s6"> <h6 class="teal-text">Titulação </h6> <p class="campo">DOUTORADO</p> </div>
+      </div>
     </div>
 
       <h1> Boletim Acadêmico </h1>
@@ -37,17 +40,81 @@
               <td class="indigo-text">AULA DE PEBOLIM</td>
               <td>10</td>
               <td>60</td>
-              <td><a href="ConteudosDisciplina.html" class="waves-effect waves-light btn-small left">Conteúdos</a></td>
-              <td><a href="AtividadesDisciplina.html" class="waves-effect waves teal darken-4 btn-small left">Atividades</a></td>
-            </tr>
+              <td>
+                <a href="#ConteudoModal" class="waves-effect waves-light modal-trigger btn-small left">Conteúdos</a>
+
+                <div id="ConteudoModal" class="modal">
+                <div style="width:100%"class="modal-content ">
+
+                   <body style="padding: 4%">
+                   <h1 style="font-size: 20px; margin-left: 6%;">Conteudos de Aula de Pebolim</h1>
+                   <div style="width:60%;"class="center "id="conteudo">
+                   <table style="padding: 0%"class="center"id="diario">
+                      <thead>
+                        <tr>
+                          <th class="teal-text"><h6>CONTEÚDO</h6></th>
+                          <th class="teal-text"><h6>DATA</h6></th>
+                        </tr>
+                      </thead>
+                      <tbody id="info">
+                      <tr>
+                          <td>INFO</td>
+                          <td>INFO</td>
+                      </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    </body>
+                    </div>
+                  </div>
+              </div>
+              
+              </td>
+
+              <td>
+                <a href="#ModalAtv" class="waves-effect waves-light modal-trigger teal darken-4 btn-small left">Atividades</a>
+                <div id="ModalAtv" class="modal">
+                    <div style="width:100%"class="modal-content">
+                      <body style="padding: 4%">
+                      <h1 style="font-size: 20px; margin-left: 6%;">Conteudos de Aula de Pebolim</h1>
+                        <div style="width:60%;"class="center "id="conteudo">
+                            <table style="padding: 0%"class="center"id="diario">
+                              <thead>
+                              <tr>
+                                <th class="teal-text"><h6>ATIVIDADE</h6></th>
+                                <th class="teal-text"><h6>NOTA MÁXIMA</h6></th>
+                                <th class="teal-text"><h6>NOTA</h6></th>
+                             </tr>
+                             </thead>
+                              <tbody id="info">
+                            <tr>
+                              <td>INFO</td>
+                              <td>INFO</td>
+                              <td>INFO</td>
+                            </tr>
+                            <tr>
+                              <td>INFO</td>
+                              <td>INFO</td>
+                              <td>INFO</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            </div>
+                            </body>
+                  </div>
+              </div>
+          </td>
+          </tr>
 
           <tr>
               <td>001</td>
-              <td class="indigo-text ">MATEMÁTICA</td>
+              <td class="indigo-text">MATEMÁTICA</td>
               <td>2</td>
               <td>75</td>
-              <td><a href="ConteudosDisciplina.html" class="waves-effect waves-light btn-small left ">Conteúdos</a></td>
-              <td><a href="AtividadesDisciplina.html" class="waves-effect waves-light teal darken-4 btn-small left">Atividades</a></td>
+              <td>
+                <a href="#ConteudoModal" class="waves-effect waves-light modal-trigger btn-small left" href="#modal1">Conteúdos</a>
+              </td>
+              <td><a href="#ModalAtv" class="waves-effect waves-light modal-trigger teal darken-4 btn-small left">Atividades</a></td>
           </tr>
 
           <tr>
@@ -55,17 +122,26 @@
               <td class="indigo-text">PRODUÇÃO DE TIKTOK</td>
               <td>0</td>
               <td>100</td>
-              <td><a href="ConteudosDisciplina.html" class="waves-effect waves-light btn-small left">Conteúdos</a></td>
-              <td><a href="AtividadesDisciplina.html" class="waves-effect waves-light teal darken-4 btn-small left">Atividades</a></td>
+              <td>
+              <a href="#ConteudoModal" class="waves-effect waves-light modal-trigger btn-small left" href="#modal1">Conteúdos</a>
+              </td>
+              <td><a href="#ModalAtv" class="waves-effect waves-light modal-trigger teal darken-4 btn-small left">Atividades</a></td>
           </tr>
 
       </tbody>
         </table>
-          </div>
 
     <!-- Jquery-->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <!-- materialize JS-->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  	<script>
+              $(document).ready(function(){
+                  $('.modal').modal();
+              });
+  	</script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/ajax.js" charset="utf-8"></script>
     <script src="js/materialize.js"></script>
   </body>
 </html>
