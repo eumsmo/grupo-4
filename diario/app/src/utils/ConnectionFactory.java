@@ -11,7 +11,7 @@ public class ConnectionFactory {
     
     public ConnectionFactory(){
         try {
-            Class.forName("com.mysql.jdbc.Drver");
+            Class.forName("com.mysql.jdbc.Driver");
         } catch (Exception e) {
             System.err.println("Erro ao carregar o driver");
         }   

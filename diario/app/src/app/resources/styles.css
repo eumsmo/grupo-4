@@ -3,6 +3,7 @@
     -fx-padding: 9.5px;
     -fx-background-insets: 2px;
     -fx-background-radius: 2px;
+    -fx-text-transform: uppercase;
 }
 .info{
     -fx-background-color: #00B0FF;
@@ -13,3 +14,4 @@
 .deletar{
     -fx-background-color: #E53935;
 }
+
