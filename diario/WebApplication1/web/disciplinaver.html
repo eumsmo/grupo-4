@@ -2,12 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Disciplina</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/materialize.css">
-    <link rel="stylesheet" type="text/css" href="css/TelaInicial_DiarioProf.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/styleDiario.css" media="screen" />
+    <title>Disciplina</title>
   </head>
   <body id="conteudos">
       <h1>Atividades e Conteúdos</h1>
@@ -15,7 +14,6 @@
       <div id="conteudo">
         <h5>Conteúdos Ministrados</h5>
         <p>Todos os conteúdos ministrados nesta disciplina.</p>
-
         <table>
              <thead>
                 <tr>
@@ -60,6 +58,7 @@
                   </tr>
                 </tbody>
           </table>
+        <a href="#modalConteudos" class="waves-effect waves-light btn-large modal-trigger" id="btnConteudos">Adicionar</a>
       </div>
       
       <div id="atividade">
@@ -110,9 +109,38 @@
                   </tr>
                 </tbody>
           </table>
+        <a href="#modalAtividades" class="waves-effect waves-light btn-large modal-trigger" id="btnAtividades">Adicionar</a>
+      </div>
+
+      <div id="modalConteudos" class="modal">
+        <div class="modal-content">
+          <div>
+            <label>CONTEÚDO <input class="" name="conteudo" type="text"></label>
+            <label>DATA <input class="short" name="data" type="date"></label>
+            <label>ETAPA <input class="short" name="etapa" type="number"></label>
+            <button class="waves-effect waves-light btn-large modal-close" id="submit">Enviar</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="modalAtividades" class="modal">
+        <div class="modal-content">
+          <div>
+            <label>ATIVIDADE <input class="" name="atividade" type="text"></label>
+            <label>DATA <input class="short" name="data" type="date"></label>
+            <label>ETAPA<input class="short" name="funcionario" type="number"></label>
+            <label>VALOR<input class="short" name="funcionario" id="funcionario" type="number"></label>
+            <button class="waves-effect waves-light btn-large modal-close" id="submit">Enviar</button>
+          </div>
+        </div>
       </div>
       
-      <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script>
+              $(document).ready(function(){
+                  $('.modal').modal();
+              });
+      </script>
       <script src="js/materialize.js"></script>
 
   </body>
