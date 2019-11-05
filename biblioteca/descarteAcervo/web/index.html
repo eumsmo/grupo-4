@@ -6,16 +6,12 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Descartes</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <!--<style>
-            label{display:block; margin: 1em 0;}
-            textarea{vertical-align: top; width: 30em; height: 10em}
-        </style>-->
     </head>
     <body>
 
@@ -26,13 +22,13 @@ and open the template in the editor.
 
             <div id="modalDescartes" class="modal">
                 <div class="modal-content">
-                    <form action="descarteAcervo" method="get">
-                        <label>ACERVO <input class="short" name="acervo" type="text"></label>
-                        <label>DATA <input class="short" name="data" type="date"></label>
-                        <label>ID FUNCIONARIO <input class="short" name="funcionario" type="text"></label>
-                        <label>MOTIVAÇÃO <textarea name="motivacao" placeholder="Insira aqui a motivação do descarte deste acervo"></textarea></label>
-                        <button class="waves-effect waves-light btn modal-close">Enviar</button>
-                    </form>
+                    <div>
+                        <label>ACERVO <input class="short" name="acervo" id="acervo" type="text"></label>
+                        <label>DATA <input class="short" name="data" id="data" type="date"></label>
+                        <label>ID FUNCIONARIO <input class="short" name="funcionario" id="funcionario" type="text"></label>
+                        <label>MOTIVAÇÃO <textarea name="motivacao" id="motivacao" placeholder="Insira aqui a motivação do descarte deste acervo"></textarea></label>
+                        <button class="waves-effect waves-light btn modal-close" id="submit">Enviar</button>
+                    </div>
                 </div>
             </div>
 
@@ -80,21 +76,6 @@ and open the template in the editor.
                 </tbody>
             </table>
         </div>
-
-        <!--
-        <form action="descarteAcervo" method="get">
-            <label>ID do acervo: <input name="acervo" type="text"></label>
-            <label>ID do funcionario: <input name="funcionario" type="text"></label>
-            <label>Data de descarte: <input name="data" type="date"></label>
-            <label>Motivação: <textarea name="motivacao"></textarea></label>
-            <button>Enviar</button>
-        </form>
-
-	<h2>Acervos Descartados</h2>-->
-
-	<pre id="acervos">
-
-	</pre>
 
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   	<script>

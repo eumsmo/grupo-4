@@ -28,12 +28,20 @@ public class descarteAcervo extends HttpServlet {
 		data = request.getParameter("data"),
 		motivo = request.getParameter("motivacao"),
 		id_funcionario = request.getParameter("funcionario");
-
-	int id_acervo = Integer.parseInt(id_acervo_string);
-	Date date = Date.valueOf(data);
-
+        
+        int id_acervo;
+        Date date;
+        
 	try (PrintWriter out = response.getWriter()) {
-            out.println("<info>");
+            
+            try{
+                id_acervo = Integer.parseInt(id_acervo_string);
+                date = Date.valueOf(data);
+            } catch(NumberFormatException | NullPointerException e){
+                out.print(RespostaXML.erro("Input errado!",e.getMessage()));
+                return;
+            }
+            
 	    try {
 		// Query SQL de inserção na tabela DESCARTES
 		String query = "INSERT INTO descartes(`id-acervo`,`data-descarte`, motivos, operador) VALUES (?,?,?,?)";
@@ -61,7 +69,7 @@ public class descarteAcervo extends HttpServlet {
 		out.print(RespostaXML.erro("Erro no banco de dados!", e.getMessage()));
                 e.printStackTrace();
 	    }
-            out.println("</info>");
+            
 	}
     }
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="css/TelaInicial_DiarioProf.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/styleDiario.css" media="screen" />
+    <title>Diário Professor</title>
+  </head>
+
+  <body>
+        <h1> Dados Pessoais </h1>
+        <div class="blue-grey lighten-5 row instrução" id="dados_professor">
+              <div class="col s5"> <h6 class="teal-text">ID (SIAPE) </h6> <p class="campo">9999999</p></div>
+              <div class="col s5"> <h6 class="teal-text">ID Departamento</h6><p class="campo">00000001</p> </div>
+              <div class="col s7"> <h6 class="teal-text">Nome</h6> <p class="campo">MARÍLIA MENDONÇA DA SILVA</p> </div>
+              <div class="col s4"> <h6 class="teal-text">Titulação </h6> <p class="campo">DOUTORADO</p> </div>
+        </div>
+
+    <h1>Disciplinas</h1>
+    <div id="listagemDisciplinas">
+        <table  id="diario">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>DISCIPLINA</th>
+              <th>TURMA</th>
+              <th>CARGA HORÁRIA</th>
+            </tr>
+          </thead>
+        
+          <tbody id="holder_diario">
+            <tr>
+              <td>001</td>
+              <td>AULA DE PEBOLIM</td>
+              <td>A</td>
+              <td>22</td>
+              <td><a href=" "  class="waves-effect waves-light btn-small left edit">visualizar</a></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+
+    <!-- Jquery-->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- materialize JS-->
+    <script src="js/materialize.js"></script>
+  </body>
+</html>
