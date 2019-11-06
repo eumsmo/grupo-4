@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diario.departamentos.controllers.ModalAdicionarController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diario.departamentos.controllers.ModalAdicionarController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
             <HBox prefHeight="59.0" prefWidth="800.0">
                <children>
-                  <Label text="ACERVO" textFill="#29a58c">
+                  <Label fx:id="LNumeroDoAcervo" text="ACERVO" textFill="#29a58c">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -25,7 +25,7 @@
                         <Insets left="24.0" right="15.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="campusTf1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Número do Acervo">
+                  <TextField fx:id="NumeroDoAcervo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Número do Acervo">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
@@ -42,7 +42,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <DatePicker promptText="XX/XX/XXXX" />
+                  <DatePicker fx:id="Data" promptText="XX/XX/XXXX" />
                </children>
             </HBox>
             <HBox alignment="BOTTOM_LEFT" prefHeight="127.0" prefWidth="800.0">
@@ -55,14 +55,14 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="campusTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Motivação">
+                  <TextField fx:id="motivacao" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Motivação">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
                   </TextField>
                </children>
             </HBox>
-            <HBox alignment="BOTTOM_LEFT" prefHeight="119.0" prefWidth="800.0">
+            <HBox fx:id="motivacao" alignment="BOTTOM_LEFT" prefHeight="119.0" prefWidth="800.0">
                <children>
                   <Label text="ID-FUNCIONARIO" textFill="#29a58c">
                      <HBox.margin>
@@ -72,7 +72,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="nomeTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Identificação Funcionario">
+                  <TextField fx:id="IdFuncionario" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Identificação Funcionario">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
@@ -81,7 +81,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="52.0" prefWidth="800.0">
                <children>
-                  <Button fx:id="adicionarBtn" graphicTextGap="5.0" mnemonicParsing="false" onAction="#adicionarDepartamento" prefWidth="135.0" style="-fx-background-color: #29a58c;" text="Adicionar" textFill="#0a0707">
+                  <Button fx:id="Enviar" graphicTextGap="5.0" mnemonicParsing="false" onAction="#adicionarDepartamento" prefWidth="135.0" style="-fx-background-color: #29a58c;" text="Enviar" textFill="#0a0707">
                      <font>
                         <Font size="24.0" />
                      </font>

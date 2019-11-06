@@ -12,13 +12,13 @@
 
             @Override
             public void start(Stage stage) throws Exception {
-                Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/TabelaDescartes.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/diario/descartes/TabelaDescartes.fxml"));
 
                 Scene scene = new Scene(root);
                 scene.getStylesheets().add(getClass().getResource("resources/styles.css").toExternalForm());
                 TableController t = new TableController();
 
-                stage.setTitle("Conteúdos");
+                stage.setTitle("Descarte");
                 stage.setScene(scene);
                 stage.show();
             }

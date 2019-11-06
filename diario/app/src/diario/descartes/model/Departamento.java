@@ -1,4 +1,4 @@
-package diario.departamentos.model;
+package diario.descartes.model;
 
 import diario.departamentos.controllers.ModalConfirmacaoController;
 import diario.departamentos.controllers.TableController;

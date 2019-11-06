@@ -1,4 +1,4 @@
-package diario.departamentos.controllers;
+package diario.descartes.controllers;
 
 import diario.departamentos.repository.DepartamentoRepository;
 import java.io.IOException;

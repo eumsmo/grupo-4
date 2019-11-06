@@ -1,4 +1,4 @@
-package diario.departamentos.controllers;
+package diario.descartes.controllers;
 
 import diario.departamentos.model.Departamento;
 import diario.departamentos.repository.DepartamentoRepository;

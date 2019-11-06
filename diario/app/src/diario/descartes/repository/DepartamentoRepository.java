@@ -1,4 +1,4 @@
-package diario.departamentos.repository;
+package diario.descartes.repository;
 
 import diario.departamentos.model.Departamento;
 import java.sql.Connection;
@@ -52,7 +52,7 @@ public class DepartamentoRepository {
         }
     }
 
-    public static void insere(int idCampi, String nome) throws SQLException{
+    public static void insere(String nome,int idCampi) throws SQLException{
         Connection con = ConnectionFactory.getDiario();
         if(con != null){
             PreparedStatement prst = con.prepareStatement("INSERT INTO `departamentos` (`id-campi`, `nome`) VALUES (?, ?)");
@@ -67,25 +67,12 @@ public class DepartamentoRepository {
         }
     }
 
-    public static void insere(Departamento depto) throws SQLException{
-        Connection con = ConnectionFactory.getDiario();
-        if(con != null){
-            PreparedStatement prst = con.prepareStatement("INSERT INTO `departamentos` (`id-campi`, `nome`) VALUES (?, ?)");
-			prst.setInt(1, depto.getIdCampi());
-			prst.setString(2, depto.getNome());
-            prst.executeUpdate();
-            prst.close();
-            con.close();
-        }
-        else{
-            throw new SQLException();
-        }
-    }
+ 
 
     public static void atualiza(int id, int idCampi) throws SQLException{
         Connection con = ConnectionFactory.getDiario();
         if(con != null){
-            PreparedStatement prst = con.prepareStatement("UPDATE `departamentos` SET `id-campi` = ? WHERE `id` = ?");
+            PreparedStatement prst = con.prepareStatement("UPDATE `de` SET `id-campi` = ? WHERE `id` = ?");
 			prst.setInt(1, idCampi);
 			prst.setInt(2, id);
 			prst.executeUpdate();
