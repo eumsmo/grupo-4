@@ -1,6 +1,6 @@
-package diario.departamentos.controllers;
+package diario.descartes.controllers;
 
-import diario.departamentos.repository.DepartamentoRepository;
+import diario.descartes.repository.DepartamentoRepository;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
