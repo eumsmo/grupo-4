@@ -51,7 +51,7 @@ public class TableController implements Initializable{
     @FXML
     void modalAdicionar(ActionEvent event) throws IOException, SQLException {
         Stage modalAdicionar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/ModalAdicionar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/diario/descartes/ModalAdicionar.fxml"));
         modalAdicionar.setScene(new Scene(root));
         modalAdicionar.initOwner(((Node)event.getSource()).getScene().getWindow());
         modalAdicionar.initModality(Modality.APPLICATION_MODAL);

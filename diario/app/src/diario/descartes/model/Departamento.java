@@ -1,8 +1,8 @@
 package diario.descartes.model;
 
-import diario.departamentos.controllers.ModalConfirmacaoController;
-import diario.departamentos.controllers.TableController;
-import diario.departamentos.repository.DepartamentoRepository;
+import diario.descartes.controllers.ModalConfirmacaoController;
+import diario.descartes.controllers.TableController;
+import diario.descartes.repository.DepartamentoRepository;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -111,7 +111,7 @@ public class Departamento {
     
     private void removerDepto(Event event) throws SQLException, IOException{
         Stage modalConfirmar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/ModalConfirmacao.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/diario/descartes/ModalConfirmacao.fxml"));
         
         modalConfirmar.setScene(new Scene(root));
         ModalConfirmacaoController.setId(this.id);
@@ -120,7 +120,7 @@ public class Departamento {
         modalConfirmar.showAndWait();
 
         Stage btn = (Stage)btns[2].getScene().getWindow();
-        Parent parent = FXMLLoader.load(getClass().getResource("/diario/departamentos/TabelaDepartamentos.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/diario/descartes/TabelaDescartes.fxml"));
         Scene scene = new Scene(parent);
         scene.getStylesheets().add("app/resources/styles.css");
         btn.setScene(scene);

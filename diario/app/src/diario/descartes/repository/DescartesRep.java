@@ -6,7 +6,7 @@
 
 package diario.descartes.repository;
 
-import diario.departamentos.model.Departamento;
+import diario.descartes.model.Departamento;
 import diario.descartes.controllers.RespostaXML;
 import java.sql.Connection;
 import java.sql.Date;

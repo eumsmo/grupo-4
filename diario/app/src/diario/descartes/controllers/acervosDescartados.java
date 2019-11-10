@@ -19,6 +19,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import utils.ConnectionFactory;
 
 
@@ -34,7 +39,7 @@ public class acervosDescartados {
 
 	
 
-	Boolean pesquisa_especifica = !(id_acervo == null || id_acervo == "");
+	Boolean pesquisa_especifica = true;
 
 	    
 	    try {
@@ -79,7 +84,6 @@ public class acervosDescartados {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 	processRequest(request, response);
@@ -93,7 +97,6 @@ public class acervosDescartados {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 	processRequest(request, response);
@@ -104,7 +107,6 @@ public class acervosDescartados {
      *
      * @return a String containing servlet description
      */
-    @Override
     public String getServletInfo() {
 	return "Short description";
     }// </editor-fold>
