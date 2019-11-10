@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dn.ModalDadosDController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox prefHeight="59.0" prefWidth="800.0">
+               <children>
+                  <Label fx:id="LNumeroDoAcervo" text="ACERVO" textFill="#29a58c">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="24.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="ACERVO" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Número do Acervo">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="127.0" prefWidth="800.0">
+               <children>
+                  <Label text="DATA" textFill="#29a58c">
+                     <HBox.margin>
+                        <Insets left="24.0" right="15.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="DATA" promptText="XX/XX/XXXX" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="127.0" prefWidth="800.0">
+               <children>
+                  <Label alignment="CENTER" text="MOTIVAÇÃO" textFill="#29a58c">
+                     <HBox.margin>
+                        <Insets left="24.0" right="15.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="MOTIVO" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Motivação">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox fx:id="motivacao" alignment="BOTTOM_LEFT" prefHeight="119.0" prefWidth="800.0">
+               <children>
+                  <Label text="ID-FUNCIONARIO" textFill="#29a58c">
+                     <HBox.margin>
+                        <Insets left="24.0" right="15.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="OPERADOR" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Identificação Funcionario">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="800.0">
+               <children>
+                  <Button fx:id="Enviar" graphicTextGap="5.0" mnemonicParsing="false" onAction="#EnviarDescarte" prefWidth="135.0" style="-fx-background-color: #29a58c;" text="Enviar" textFill="#0a0707">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

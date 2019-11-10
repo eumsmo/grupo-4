@@ -1,6 +1,7 @@
         package app;
 
-        import diario.departamentos.controllers.TableController;
+        //import diario.departamentos.controllers.TableController;
+        import diario.descartes.controllers.TableController;
         import javafx.application.Application;
         import javafx.fxml.FXMLLoader;
         import javafx.scene.Parent;

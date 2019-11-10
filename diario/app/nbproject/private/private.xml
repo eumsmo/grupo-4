@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/app/MainApp.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/diario/descartes/repository/DescartesRep.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/diario/descartes/controllers/TableController.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/diario/descartes/controllers/acervosDescartados.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/app/FXMLController.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/diario/descartes/controllers/RespostaXML.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/diario/departamentos/model/Departamento.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/diario/descartes/controllers/ModalAdicionarController.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/diario/descartes/controllers/DescartedeAcervos.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/diario/descartes/controllers/ModalConfirmacaoController.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/utils/ConnectionFactory.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/diario/descartes/repository/DepartamentoRepository.java</file>
+        </group>
+    </open-files>
+</project-private>

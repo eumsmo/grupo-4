@@ -31,7 +31,7 @@ public class ModalAdicionarController {
 
     @FXML			
     void EnviarDescarte(ActionEvent event) throws SQLException {
-        String IDFuncionario = IdFuncionario.getText();
+       /* String IDFuncionario = IdFuncionario.getText();
         String motivo = motivacao.getText();
         Date data= (Date) Data.getDayCellFactory();
         Integer NumeroAcervo = Integer.parseInt(NumeroDoAcervo.getText());
@@ -40,13 +40,13 @@ public class ModalAdicionarController {
         DescartesRep.insereDescartesEremoveAcervo(motivo, IDFuncionario, NumeroAcervo, data);
       
         Stage modal = (Stage) cancelarBtn.getScene().getWindow();
-        modal.close();
+        modal.close();*/
     }
 
     @FXML
     void cancelar(ActionEvent event) {
-        Stage modal = (Stage) cancelarBtn.getScene().getWindow();
-        modal.close();
+        /*Stage modal = (Stage) cancelarBtn.getScene().getWindow();
+        modal.close();*/
     }
 
 }
