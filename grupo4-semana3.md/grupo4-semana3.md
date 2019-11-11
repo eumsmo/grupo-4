@@ -1,64 +1,59 @@
-# Grupo 1 | B
+# Grupo 4 | E
 
-## Metas da Semana
-
-%%%
-
-#### Terminar manipulações em BD
-
-- [X] Inserir acervo
-- [X] Remover acervo
-    - [X] Enviar email
-- [X] Atualizar acervo
-- [X] Consultar acervo
+## O Que Foi Proposto
 
 %%%
 
-#### Começar Front-end
+#### WEB
 
-- [X] listar professores
+- [X] Lançamento de Notas por Atividade
+- [X] Lançamento de Faltas por Atividade
+- [ ] Diário do Aluno
 
-- [X] modal de edição
+%%%
 
-- [X] modal de remoção
+#### Desktop
+
+- [X] Finalizar Front-End do Diário
+- [X] Finalizar Front-End de Descartes
 
 ---
 
-## Tarefas Cumpridas
+## O Que Fizemos
 
 %%%
 
-#### Nikolas
+#### Marcus
 
-- Solução do envio de E-Mail
+* Front-End completo do Diário no Desktop
 
-#### Jonata
+#### Dornelas
 
-- Consulta no *acervo*
-- Remoção no *acervo*
+* Back-End no Desktop
 
 %%%
 
-#### Indra
+#### Juan
 
-- Inserção no *acervo*
-- Atualização no *acervo*
+* Lançamentos de notas e faltas
 
-#### Amanda
+#### Nicoly e Julia
 
-- Front-end listagem
+* Correções de código
+* Front-End do Professor
+* Front-End do Aluno
 
 ---
 
-## Planejamento da Semana Seguinte
+## O Que Faremos
 
 %%%
 
-#### Terminar back-end
-- login do *professor*
+#### WEB 
 
-#### Terminar front-end da aplicação web
-- listagem do *acervo*
+* Autenticação do Diário do Professor
+* Diário do Aluno
 
-#### Começar front-end da aplicação desktop
-- listagem dos *professores*
+#### Desktop
+
+* Finalizar Back-End do Diário
