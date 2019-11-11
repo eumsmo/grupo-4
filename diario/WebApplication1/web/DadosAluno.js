@@ -13,7 +13,7 @@ const infos = {
         },
         queries: {
             holder: "#holder_conteudos",
-            template: "#template_conteudos",
+            template: "#template_alunos",
             alterar: "#modalAlteraConteudos"
         },
         callback: consultarAlunos
@@ -43,7 +43,6 @@ function consultarAlunos(info,resposta_dom){
         };
 
         let el = geraElemento(info.queries.template,args)[0];
-
         holder.appendChild(el);
 
     }
