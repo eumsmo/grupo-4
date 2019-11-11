@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package diario.descartes.controllers;
 
 import diario.descartes.repository.DescartesRep;
@@ -8,15 +13,26 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class ModalAdicionarController {
+public class diarioProfessorController {
 
     @FXML
-    private TextField Etapa;
+    private TableColumn Conteudo;
     @FXML
-    private TextField Conteudo;
+    private TableColumn EtapaConteudo;
+    @FXML
+    private TableColumn DataConteudo;
+    @FXML
+    private TableColumn Atividade;
+    @FXML
+    private TableColumn EtapaAtividade;
+    @FXML
+    private TableColumn DataAtividade;
+    @FXML
+    private Button AdicionarAtividade;
 
     @FXML
     private DatePicker Data;
@@ -24,6 +40,8 @@ public class ModalAdicionarController {
     @FXML
     private Button Enviar;
 
+    @FXML
+    private Button cancelarBtn;
 
     @FXML			
     void EnviarDescarte(ActionEvent event) throws SQLException {
