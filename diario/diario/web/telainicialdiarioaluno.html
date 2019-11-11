@@ -94,7 +94,20 @@
           </table>
         </div>
       </div>
-      
+      <!-- Template de linha da tabela conteudos -->
+      <template id="template_dados">
+        <tr id="{{id}}" nome="{{nome}}" sexo="{{sexo}}" nascimento="{{nascimento}}" email="{{email}}">
+          <td>{{id}}</td>
+          <td>{{nome}}</td>
+          <td>{{sexo}}</td>
+          <td>{{nascimento}}</td>
+          <td>{{email}}</td>
+          <td><a href="lancar.html?conteudo={{id}}" class="waves-effect waves-light btn-small modal-trigger light-blue accent 3">Faltas</a></td>
+          <td><a href="#modalAlteraConteudos" class="waves-effect waves-light btn-small modal-trigger edit">Editar</a></td>
+          <td><a class="waves-effect waves-light btn-small red darken 1">Deletar</a></td>
+          </tr>
+      </template>
+
 
     <!-- Jquery-->
     <script src="js/jquery-3.3.1.min.js"></script>
