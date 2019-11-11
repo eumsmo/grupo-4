@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0000;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dn.FXMLDocumentController">
+<StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0000;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diario.descartes.controllers.diarioProfessorController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="53.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
       <Label fx:id="label" text="DIÁRIO-PROFESSOR" textFill="#fdfbf9" StackPane.alignment="TOP_LEFT">
