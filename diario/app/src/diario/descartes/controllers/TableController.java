@@ -1,7 +1,7 @@
-package diario.departamentos.controllers;
+package diario.descartes.controllers;
 
-import diario.departamentos.model.Departamento;
-import diario.departamentos.repository.DepartamentoRepository;
+import diario.descartes.model.Departamento;
+import diario.descartes.repository.DepartamentoRepository;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -51,7 +51,7 @@ public class TableController implements Initializable{
     @FXML
     void modalAdicionar(ActionEvent event) throws IOException, SQLException {
         Stage modalAdicionar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/ModalAdicionar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/diario/descartes/ModalAdicionar.fxml"));
         modalAdicionar.setScene(new Scene(root));
         modalAdicionar.initOwner(((Node)event.getSource()).getScene().getWindow());
         modalAdicionar.initModality(Modality.APPLICATION_MODAL);

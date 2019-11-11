@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styleDiario.css" media="screen" />
+    <title>Disciplina</title>
+  </head>
+  <body id="conteudos">
+      <h1>Atividades e Conteúdos</h1>
+
+      <div id="conteudo">
+        <h5>Conteúdos Ministrados</h5>
+        <p>Todos os conteúdos ministrados nesta disciplina.</p>
+        <table>
+             <thead>
+                <tr>
+                  <th>CONTEÚDO</th>
+                  <th>ETAPA</th>
+                  <th>DATA</th>
+                 </tr>
+              </thead>
+              
+                <tbody id="holder_conteudos">
+                  <tr>
+                    <td>Física</td>
+                    <td>1</td>
+                    <td>29/10/2019</td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger new">Faltas</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger edit">Editar</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger delete">Deletar</a></td>
+                  </tr>
+                  <tr>
+                    <td>Física 2: lá vamos nós</td>
+                    <td>2</td>
+                    <td>29/10/2019</td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger new">Faltas</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger edit">Editar</td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger delete">Deletar</a></td>
+                  </tr>
+                  <tr>
+                    <td>Física 3: a mesma coisa mais complicada</td>
+                    <td>3</td>
+                    <td>29/10/2019</td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger new">Faltas</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger edit">Editar</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger delete">Deletar</a></td>
+                  </tr>
+                  <tr>
+                    <td>Física para sempre: quando você acha que não dá pra piorar...</td>
+                    <td>4</td>
+                    <td>29/10/2019</td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger new">Faltas</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger edit">Editar</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger delete">Deletar</a></td>
+                  </tr>
+                  <template id="template_conteudos">
+                    <tr>
+                      <td>{{conteudo}}</td>
+                      <td>{{etapa}}</td>
+                      <td>{{data}}</td>
+                      <td><a class="waves-effect waves-light btn-small modal-trigger new" data-id="{{id}}">Faltas</a></td>
+                      <td><a class="waves-effect waves-light btn-small modal-trigger edit" data-id="{{id}}">Editar</a></td>
+                      <td><a class="waves-effect waves-light btn-small modal-trigger delete" data-id="{{id}}">Deletar</a></td>
+                    </tr>
+                  </template>
+                </tbody>
+          </table>
+        <a href="#modalConteudos" class="waves-effect waves-light btn-large modal-trigger" id="btnConteudos">Adicionar</a>
+      </div>
+      
+      <div id="atividade">
+        <h5>Atividades Realizadas</h5>
+        <p>Todas as atividades realizadas nesta disciplina.</p>
+
+        <table>
+             <thead>
+                <tr>
+                  <th>ATIVIDADE</th>
+                  <th>ETAPA</th>
+                  <th>VALOR</th>
+                 </tr>
+              </thead>
+              
+                <tbody id="holder_atividades">
+                  <tr>
+                    <td>Física</td>
+                    <td>1</td>
+                    <td>10</td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger new">Notas</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger edit">Editar</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger delete">Deletar</a></td>
+                  </tr>
+                  <tr>
+                    <td>Física 2: lá vamos nós</td>
+                    <td>2</td>
+                    <td>10</td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger new">Notas</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger edit">Editar</td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger delete">Deletar</a></td>
+                  </tr>
+                  <tr>
+                    <td>Física 3: a mesma coisa mais complicada</td>
+                    <td>3</td>
+                    <td>10</td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger new">Notas</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger edit">Editar</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger delete">Deletar</a></td>
+                  </tr>
+                  <tr>
+                    <td>Física para sempre: quando você acha que não dá pra piorar...</td>
+                    <td>4</td>
+                    <td>10</td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger new">Notas</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger edit">Editar</a></td>
+                    <td><a class="waves-effect waves-light btn-small modal-trigger delete">Deletar</a></td>
+                  </tr>
+                </tbody>
+          </table>
+        <a href="#modalAtividades" class="waves-effect waves-light btn-large modal-trigger" id="btnAtividades">Adicionar</a>
+      </div>
+
+      <div id="modalConteudos" class="modal">
+        <div class="modal-content">
+          <div id="inserir_conteudo">
+            <label>CONTEÚDO <input class="" name="conteudo" type="text"></label>
+            <label>DATA <input class="short" name="data" type="date"></label>
+            <label>ETAPA <input class="short" name="etapa" type="number"></label>
+            <button class="waves-effect waves-light btn-large modal-close" id="submit_inserir_conteudo">Enviar</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="modalAtividades" class="modal">
+        <div class="modal-content">
+          <div id="inserir_atividade">
+            <label>ATIVIDADE <input class="" name="conteudo" type="text"></label>
+            <label>DATA <input class="short" name="data" type="date"></label>
+            <label>ETAPA<input class="short" name="etapa" type="number"></label>
+            <label>VALOR<input class="short" name="valor" type="number"></label>
+            <button class="waves-effect waves-light btn-large modal-close" id="submit_inserir_atividade">Enviar</button>
+          </div>
+        </div>
+      </div>
+      
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script>
+              $(document).ready(function(){
+                  $('.modal').modal();
+              });
+      </script>
+      <script src="js/materialize.min.js"></script>
+      <script src="js/ajax.js"></script>
+      <script src="js/conteudo_atividade.js"></script>
+
+  </body>
+</html>

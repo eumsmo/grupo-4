@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styleDiario.css" media="screen" />
+    <title>Diário Aluno</title>
+  </head>
+
+  <body id="aluno">
+    <h1> Dados Pessoais </h1>
+    <div class="blue-grey lighten-5 row area" id="dados_aluno">
+          <div class="col s5"> <h6 class="teal-text">CPF</h6> <p class="campo">9999999</p></div>
+              <div class="col s5"> <h6 class="teal-text">Nome</h6><p class="campo">JOÃO DE SANTO CRISTO</p> </div>
+              <div class="col s7"> <h6 class="teal-text">Sexo</h6> <p class="campo">MASCULINO</p> </div>
+              <div class="col s4"> <h6 class="teal-text">Nascimento </h6> <p class="campo">22/01/2001</p> </div>
+              <div class="col s5"> <h6 class="teal-text">Email</h6> <p class="campo">joãodesantocristo@legiaourbana.com</p></div>
+    </div>
+
+      <h1> Boletim Acadêmico </h1>
+      <div class="blue-grey lighten-5 row area" id="boletim">
+          <table id="diario">
+          <thead>
+            <tr>
+                <th><h6>ID</h6></th>
+                <th><h6>DISCIPLINA</h6></th>
+                <th><h6>FALTAS</h6></th>
+                <th><h6>NOTA</h6></th>
+            </tr>
+        </thead>
+
+        <!-- Listar as disciplinas do aluno -->
+        <tbody>
+            <tr>
+              <td>001</td>
+              <td class="indigo-text">AULA DE PEBOLIM</td>
+              <td>10</td>
+              <td>60</td>
+              <td><a href="#modalConteudoAluno" class="waves-effect waves-light btn-small left modal-trigger">Conteúdos</a></td>
+              <td><a href="#modalAtividadeAluno" class="waves-effect waves teal darken-4 btn-small left modal-trigger">Atividades</a></td>
+            </tr>
+
+          <tr>
+              <td>001</td>
+              <td class="indigo-text ">MATEMÁTICA</td>
+              <td>2</td>
+              <td>75</td>
+              <td><a href="#modalConteudoAluno" class="waves-effect waves-light btn-small left modal-trigger">Conteúdos</a></td>
+              <td><a href="#modalAtividadeAluno" class="waves-effect waves teal darken-4 btn-small left modal-trigger">Atividades</a></td>
+          </tr>
+
+          <tr>
+              <td>001</td>
+              <td class="indigo-text">PRODUÇÃO DE TIKTOK</td>
+              <td>0</td>
+              <td>100</td>
+              <td><a href="#modalConteudoAluno" class="waves-effect waves-light btn-small left modal-trigger">Conteúdos</a></td>
+              <td><a href="#modalAtividadeAluno" class="waves-effect waves teal darken-4 btn-small left modal-trigger">Atividades</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="modalConteudoAluno" class="modal">
+        <div class="modal-content">
+          <table>
+            <tr>
+              <th>CONTEUDO</th>
+              <th>DATA</th>
+            </tr>
+            <tr>
+              <td>Aula de Forró</td>
+              <td>12/10</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div id="modalAtividadeAluno" class="modal">
+        <div class="modal-content">
+          <table>
+            <tr>
+              <th>ATIVIDADE</th>
+              <th>VALOR</th>
+              <th>NOTA</th>
+            </tr>
+            <tr>
+              <td>Iniciação ao Forró</td>
+              <td>10</td>
+              <td>9,99</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Template de linha da tabela alunos -->
+      <template id="template_dados">
+        <tr id="{{id}}" nome="{{nome}}" sexo="{{sexo}}" nascimento="{{nascimento}}" email="{{email}}">
+          <td>{{id}}</td>
+          <td>{{nome}}</td>
+          <td>{{sexo}}</td>
+          <td>{{nascimento}}</td>
+          <td>{{email}}</td>
+          </tr>
+      </template>
+
+
+    <!-- Jquery-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.modal').modal();
+      });
+    </script>
+    <!-- materialize JS-->
+    <script src="js/materialize.min.js"></script>
+  </body>
+</html>
