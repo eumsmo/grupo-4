@@ -8,12 +8,10 @@
     
     -fx-font-family: 'Montserrat', sans-serif;
     -fx-text-fill: #FDFBF9;
-    -fx-padding: 15px;
+    -fx-padding: 10px;
     -fx-background-insets: 2px;
     -fx-background-radius: 2px;
-    -fx-cursor: hand;
-    -fx-background-color:  #29a58c;
-    
+    -fx-cursor: HAND;
 }
 .identificadores{
     -fx-font-family: 'Montserrat', sans-serif;
