@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="css/styleDiario.css" media="screen" />
     <title>Diário Aluno</title>
   </head>
@@ -94,7 +94,18 @@
           </table>
         </div>
       </div>
-      
+
+      <!-- Template de linha da tabela alunos -->
+      <template id="template_dados">
+        <tr id="{{id}}" nome="{{nome}}" sexo="{{sexo}}" nascimento="{{nascimento}}" email="{{email}}">
+          <td>{{id}}</td>
+          <td>{{nome}}</td>
+          <td>{{sexo}}</td>
+          <td>{{nascimento}}</td>
+          <td>{{email}}</td>
+          </tr>
+      </template>
+
 
     <!-- Jquery-->
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -104,6 +115,6 @@
       });
     </script>
     <!-- materialize JS-->
-    <script src="js/materialize.js"></script>
+    <script src="js/materialize.min.js"></script>
   </body>
 </html>

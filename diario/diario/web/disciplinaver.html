@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="css/styleDiario.css" media="screen" />
     <title>Disciplina</title>
   </head>
@@ -56,6 +56,16 @@
                     <td><a class="waves-effect waves-light btn-small modal-trigger edit">Editar</a></td>
                     <td><a class="waves-effect waves-light btn-small modal-trigger delete">Deletar</a></td>
                   </tr>
+                  <template id="template_conteudos">
+                    <tr>
+                      <td>{{conteudo}}</td>
+                      <td>{{etapa}}</td>
+                      <td>{{data}}</td>
+                      <td><a class="waves-effect waves-light btn-small modal-trigger new" data-id="{{id}}">Faltas</a></td>
+                      <td><a class="waves-effect waves-light btn-small modal-trigger edit" data-id="{{id}}">Editar</a></td>
+                      <td><a class="waves-effect waves-light btn-small modal-trigger delete" data-id="{{id}}">Deletar</a></td>
+                    </tr>
+                  </template>
                 </tbody>
           </table>
         <a href="#modalConteudos" class="waves-effect waves-light btn-large modal-trigger" id="btnConteudos">Adicionar</a>
@@ -114,23 +124,23 @@
 
       <div id="modalConteudos" class="modal">
         <div class="modal-content">
-          <div>
+          <div id="inserir_conteudo">
             <label>CONTEÚDO <input class="" name="conteudo" type="text"></label>
             <label>DATA <input class="short" name="data" type="date"></label>
             <label>ETAPA <input class="short" name="etapa" type="number"></label>
-            <button class="waves-effect waves-light btn-large modal-close" id="submit">Enviar</button>
+            <button class="waves-effect waves-light btn-large modal-close" id="submit_inserir_conteudo">Enviar</button>
           </div>
         </div>
       </div>
 
       <div id="modalAtividades" class="modal">
         <div class="modal-content">
-          <div>
-            <label>ATIVIDADE <input class="" name="atividade" type="text"></label>
+          <div id="inserir_atividade">
+            <label>ATIVIDADE <input class="" name="conteudo" type="text"></label>
             <label>DATA <input class="short" name="data" type="date"></label>
-            <label>ETAPA<input class="short" name="funcionario" type="number"></label>
-            <label>VALOR<input class="short" name="funcionario" id="funcionario" type="number"></label>
-            <button class="waves-effect waves-light btn-large modal-close" id="submit">Enviar</button>
+            <label>ETAPA<input class="short" name="etapa" type="number"></label>
+            <label>VALOR<input class="short" name="valor" type="number"></label>
+            <button class="waves-effect waves-light btn-large modal-close" id="submit_inserir_atividade">Enviar</button>
           </div>
         </div>
       </div>
@@ -141,7 +151,9 @@
                   $('.modal').modal();
               });
       </script>
-      <script src="js/materialize.js"></script>
+      <script src="js/materialize.min.js"></script>
+      <script src="js/ajax.js"></script>
+      <script src="js/conteudo_atividade.js"></script>
 
   </body>
 </html>

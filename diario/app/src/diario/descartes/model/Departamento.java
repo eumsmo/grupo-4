@@ -1,8 +1,7 @@
-package diario.departamentos.model;
+package diario.descartes.model;
 
-import diario.departamentos.controllers.ModalConfirmacaoController;
-import diario.departamentos.controllers.TableController;
-import diario.departamentos.repository.DepartamentoRepository;
+import diario.descartes.controllers.TableController;
+import diario.descartes.repository.DepartamentoRepository;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -114,7 +113,6 @@ public class Departamento {
         Parent root = FXMLLoader.load(getClass().getResource("/diario/departamentos/ModalConfirmacao.fxml"));
         
         modalConfirmar.setScene(new Scene(root));
-        ModalConfirmacaoController.setId(this.id);
         modalConfirmar.initOwner(((Node)event.getSource()).getScene().getWindow());
         modalConfirmar.initModality(Modality.APPLICATION_MODAL);
         modalConfirmar.showAndWait();
