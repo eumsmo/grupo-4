@@ -1,6 +1,6 @@
-package diario.descartes.repository;
+package diario.aluno.repository;
 
-import diario.descartes.model.Departamento;
+import diario.aluno.model.Departamento;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

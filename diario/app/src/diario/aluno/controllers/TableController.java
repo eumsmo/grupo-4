@@ -1,7 +1,7 @@
-package diario.descartes.controllers;
+package diario.aluno.controllers;
 
-import diario.descartes.model.Departamento;
-import diario.descartes.repository.DepartamentoRepository;
+import diario.aluno.model.Departamento;
+import diario.aluno.repository.DepartamentoRepository;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;

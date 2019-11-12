@@ -1,8 +1,7 @@
-package diario.descartes.model;
+package diario.aluno.model;
 
-import diario.descartes.controllers.ModalConfirmacaoController;
-import diario.descartes.controllers.TableController;
-import diario.descartes.repository.DepartamentoRepository;
+import diario.aluno.controllers.TableController;
+import diario.aluno.repository.DepartamentoRepository;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -52,7 +51,6 @@ public class Departamento {
         btns[2].getStyleClass().add("deletar");
         hbox.getChildren().add(1, btns[1]);
         hbox.getChildren().add(2, btns[2]);
-        btnSetup(this.id);
     }
 
     public HBox getHbox() {
@@ -95,35 +93,6 @@ public class Departamento {
         this.nome = nome;
     }
     
-    public void btnSetup(int id){
-        btns[2].setOnAction(new EventHandler() {
-            @Override
-            public void handle(Event event) {
-                try {
-                    removerDepto(event);
-                } catch (SQLException ex) {
-                    System.err.println(ex);
-                } catch (IOException ex) {
-                    System.err.println(ex);
-                }
-            }});
-    }
     
-    private void removerDepto(Event event) throws SQLException, IOException{
-        Stage modalConfirmar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/diario/descartes/ModalConfirmacao.fxml"));
-        
-        modalConfirmar.setScene(new Scene(root));
-        ModalConfirmacaoController.setId(this.id);
-        modalConfirmar.initOwner(((Node)event.getSource()).getScene().getWindow());
-        modalConfirmar.initModality(Modality.APPLICATION_MODAL);
-        modalConfirmar.showAndWait();
-
-        Stage btn = (Stage)btns[2].getScene().getWindow();
-        Parent parent = FXMLLoader.load(getClass().getResource("/diario/descartes/TabelaDescartes.fxml"));
-        Scene scene = new Scene(parent);
-        scene.getStylesheets().add("app/resources/styles.css");
-        btn.setScene(scene);
-        
-    } 
+    
 }

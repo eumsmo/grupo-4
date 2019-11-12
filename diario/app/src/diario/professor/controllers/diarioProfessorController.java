@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package diario.descartes.controllers;
+package diario.professor.controllers;
 
-import diario.descartes.repository.DescartesRep;
+import diario.professor.repository.DescartesRep;
 import java.sql.Date;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;

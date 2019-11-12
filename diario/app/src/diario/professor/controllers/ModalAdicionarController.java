@@ -1,4 +1,4 @@
-package diario.descartes.controllers;
+package diario.professor.controllers;
 
 import diario.descartes.repository.DescartesRep;
 import java.sql.Date;
