@@ -4,17 +4,18 @@
 
 %%%
 
-#### Finalização de Descartes
+#### WEB
 
-- [X] Front-End de Descartes no Desktop
-- [X] Back-End de Descartes no Desktop
+- [X] Lançamentos de Notas por Atividade
+- [X] Lançamentos de Faltas por Conteúdo
+- [ ] Diário do Aluno
 
 %%%
 
-#### Diário
+#### Desktop
 
-- [X] Inicialização do Diário do Aluno
-- [ ] Finalização do Diário Professor WEB
+- [X] Finalizar Front-End
+- [ ] Iniciar o Back-End do Diário
 
 ---
 
@@ -24,23 +25,23 @@
 
 #### Marcus
 
-* Front-End completo de Descartes no Desktop
-* Ínicio do front-end de Diário do Desktop
+* Front-End do Diário do Aluno e Professor no Desktop
 
 #### Dornelas
 
-* Back-End de Descartes no Desktop
+* Back-End do Descarte no Desktop
+* Inicialização do Back-End do Diário no Desktop
 
 %%%
 
 #### Juan
 
-* Back-End do Diário do Professor
+* Back-End do Diário do Professor no WEB
 
 #### Nicoly e Julia
 
-* Front-End do Diário do Professor e do Aluno
-* Reformulações do Diário
+* Correções e ajustes necessários no Front-End
+* Exibições de dados com AJAX para Professor e Aluno
 
 ---
 
@@ -50,11 +51,9 @@
 
 #### WEB
 
-* Lançamento de Notas das atividade
-* Lançamento de Faltas do conteúdo
-* Diário do Aluno
+* Back-End do Diário do Aluno
+* Autenticação do Diário do Professor
 
 #### Desktop
 
-* Finalizar o Front-End
-* Iniciar o Back-End do Diário
+* Finalização do Back-End do Diário Professor
