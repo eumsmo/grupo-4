@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -11,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diario.descartes.controllers.ModalAdicionarController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" styleClass="identificadores" stylesheets="@../../app/resources/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diario.descartes.controllers.ModalAdicionarController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
@@ -42,7 +49,7 @@
                <children>
                   <Label text="Data" textFill="#29a58c">
                      <font>
-                        <Font size="20.0" />
+                        <Font name="Anastasia Figured Bass" size="20.0" />
                      </font>
                      <opaqueInsets>
                         <Insets />
@@ -51,14 +58,17 @@
                         <Insets bottom="20.0" left="24.0" />
                      </HBox.margin>
                   </Label>
-                  <DatePicker fx:id="Data" promptText="XX/XX/XXXX">
+                  <DatePicker fx:id="Data" minHeight="30.0" minWidth="292.0" prefHeight="10.0" prefWidth="292.0" promptText="XX/XX/XXXX">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <HBox.margin>
-                        <Insets bottom="20.0" />
+                        <Insets bottom="20.0" left="20.0" />
                      </HBox.margin></DatePicker>
                </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
             <HBox alignment="BOTTOM_LEFT" prefHeight="127.0" prefWidth="800.0">
                <children>
@@ -70,7 +80,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Etapa">
+                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Etapa">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
