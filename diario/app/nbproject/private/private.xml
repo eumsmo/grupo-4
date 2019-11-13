@@ -3,21 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/diario/descartes/model/Departamento.java</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/diario/descartes/telainicialdiarioaluno.fxml</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/diario/descartes/controllers/diarioProfessorController.java</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/diario/descartes/controllers/telaInicialDiarioAlunoController.java</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/diario/descartes/repository/DepartamentoRepository.java</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/app/MainApp.java</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/diario/descartes/controllers/ModalAdicionarController.java</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/diario/descartes/diarioprofessor.fxml</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/diario/descartes/controllers/RespostaXML.java</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/utils/ConnectionFactory.java</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/diario/descartes/controllers/TableController.java</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/diario/descartes/telainicialdiarioprofessor.fxml</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/app/resources/styles.css</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/diario/descartes/ModalAdicionar.fxml</file>
-            <file>file:/C:/Users/Aluno/Desktop/abcd/grupo-4/diario/app/src/app/FXMLController.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/app/MainApp.java</file>
+            <file>file:/C:/Users/User/Desktop/grupo-4/diario/app/src/app/FXMLController.java</file>
         </group>
     </open-files>
 </project-private>

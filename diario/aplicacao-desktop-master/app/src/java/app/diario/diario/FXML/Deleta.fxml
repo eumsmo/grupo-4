@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="541.0" styleClass="fonte" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.DiarioD.DeletaControler">
+   <children>
+      <Button fx:id="deleteLabelConfirmar" layoutX="305.0" layoutY="113.0" mnemonicParsing="false" onAction="#confirma" style="-fx-background-color: #29a58c;" text="CONFIRMAR" textFill="WHITE" />
+      <Button fx:id="deleteLabelCancelar" layoutX="172.0" layoutY="113.0" mnemonicParsing="false" onAction="#cancela" style="-fx-background-color: #E53935;" text="CANCELAR" textFill="WHITE" />
+      <Label fx:id="text" layoutX="37.0" layoutY="57.0" styleClass="fonte" textFill="#377256">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
