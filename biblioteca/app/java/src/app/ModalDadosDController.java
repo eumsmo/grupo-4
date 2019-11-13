@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package dn;
+package app;
 
 import java.net.URL;
 import java.sql.Date;

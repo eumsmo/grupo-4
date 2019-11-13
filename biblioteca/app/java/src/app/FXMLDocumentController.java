@@ -1,4 +1,4 @@
-package dn;
+package app;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -16,7 +16,7 @@ import java.sql.Date;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import dn.DescartadoLista;
+import app.DescartadoLista;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
