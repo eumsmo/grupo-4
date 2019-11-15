@@ -17,7 +17,7 @@ public class ConteudosModel {
 	Integer id = null, idEtapa = null, idDisciplina = null;
 	String conteudo = null;
         Button Deletar,Editar,Faltas;
-	Date data = null;
+	String data = null;
 	Double valor = null;
 
 	public ConteudosModel() {
@@ -29,28 +29,28 @@ public class ConteudosModel {
         this.Faltas = Faltas;
     }
 
-	public ConteudosModel(int id, int idEtapa, int idDisciplina, String conteudo, Date data, Double valor) {
+	public ConteudosModel(int id, int idEtapa, int idDisciplina, String conteudo,String data, Double valor) {
 		this.id = id;
 		this.idEtapa = idEtapa;
 		this.idDisciplina = idDisciplina;
 		this.conteudo = conteudo;
 		this.valor = valor;
-		setData(data);
+		//setData(data);
 	}
 
-	public ConteudosModel(int idEtapa, int idDisciplina, String conteudo, Date data, Double valor) {
+	public ConteudosModel(int idEtapa, int idDisciplina, String conteudo, String data, Double valor) {
 		this.idEtapa = idEtapa;
 		this.idDisciplina = idDisciplina;
 		this.conteudo = conteudo;
 		this.valor = valor;
-		setData(data);
+		//setData(data);
 	}
 
-	public ConteudosModel(int idEtapa, int idDisciplina, String conteudo, Date data) {
+	public ConteudosModel(int idEtapa, int idDisciplina, String conteudo,String data) {
 		this.idEtapa = idEtapa;
 		this.idDisciplina = idDisciplina;
 		this.conteudo = conteudo;
-		setData(data);
+		//setData(data);
 		valor = null;
 	}
 
@@ -95,7 +95,7 @@ public class ConteudosModel {
 		this.valor = valor;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
@@ -103,7 +103,7 @@ public class ConteudosModel {
 		Calendar c = Calendar.getInstance();
 		c.setTime(data);
 		c.add(Calendar.DATE, 1);
-		this.data = new Date(c.getTimeInMillis());
+		//this.data = new Date(c.getTimeInMillis());
 	}
 
 }

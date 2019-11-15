@@ -6,17 +6,14 @@
 
 package app.diario.DiarioD;
 
-import java.net.URL;
+/*import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-/**
- *
- * @author User
- */
+
 public class DeletaController implements Initializable {
      @FXML
     private Button deleteLabelCancelar;
@@ -74,3 +71,4 @@ public class DeletaController implements Initializable {
     }
     
 }
+*/

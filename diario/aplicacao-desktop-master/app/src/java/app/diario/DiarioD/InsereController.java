@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package app.diario.DiarioD;
-
+/*
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,10 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-/**
- *
- * @author tuba1
- */
+
 public class InsereController implements Initializable {
 
     @FXML
@@ -108,7 +105,7 @@ public class InsereController implements Initializable {
 
    /* public void fecha() {
         InsereMain.getStage().close();
-    }*/
+    }*
 
     public static boolean isNum(String strNum) {
         boolean ret = true;
@@ -123,3 +120,4 @@ public class InsereController implements Initializable {
     }
 
 }
+*/

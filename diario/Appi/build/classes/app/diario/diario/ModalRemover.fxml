@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.diario.controllers.ModalRemoverController">
+    <children>
+        <Button fx:id="apagarBtn" mnemonicParsing="false" onAction="#apagarDepartamento" prefWidth="135.0" style="-fx-background-color: #29A58C;" text="Apagar" textFill="#fdfbf9" StackPane.alignment="CENTER_LEFT">
+            <font>
+                <Font size="24.0" />
+            </font>
+            <StackPane.margin>
+                <Insets left="224.0" top="128.0" />
+            </StackPane.margin>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="cancelarBtn" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#cancelar" prefHeight="51.0" prefWidth="131.0" style="-fx-background-color: #E53935;" text="Cancelar" textFill="#fdfbf9" StackPane.alignment="CENTER_RIGHT">
+            <font>
+                <Font size="24.0" />
+            </font>
+            <StackPane.margin>
+                <Insets right="224.0" top="128.0" />
+            </StackPane.margin>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Label alignment="TOP_CENTER" prefHeight="76.0" prefWidth="742.0" text="Deseja realmente apagar este departamento?" StackPane.alignment="TOP_CENTER">
+            <font>
+                <Font size="36.0" />
+            </font>
+            <StackPane.margin>
+                <Insets top="40.0" />
+            </StackPane.margin>
+        </Label>
+        <Label fx:id="aviso" style="-fx-background-color: red;" textAlignment="CENTER" textFill="WHITE" StackPane.alignment="TOP_CENTER">
+            <StackPane.margin>
+                <Insets top="128.0" />
+            </StackPane.margin>
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+    </children>
+</StackPane>

@@ -1,5 +1,5 @@
 package diario.diario.conteudos;
-
+/*
 import app.diario.DiarioD.DbConnector;
 import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import diario.diario.views.ErroView;
@@ -26,9 +26,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import utils.ConnectionFactory;
 
-/**
- * @author Juan
- */
 
 public class Inserir implements Initializable {
 
@@ -82,7 +79,7 @@ public class Inserir implements Initializable {
 
    /* public void fecha() {
         InsereMain.getStage().close();
-    }*/
+    }
 
     public static boolean isNum(String strNum) {
         boolean ret = true;
@@ -101,7 +98,7 @@ public class Inserir implements Initializable {
 			/*DiarioAutenticador autenticador = new DiarioAutenticador(request, response);
 			if (!(autenticador.cargoLogado() == DiarioCargos.ADMIN || autenticador.cargoLogado() == DiarioCargos.PROFESSOR)) {
 				throw new ExcecaoNaoAutorizado("Você não tem permissão para essa operação");
-			}*/
+			}
 
 			Connection conexao = ConnectionFactory.getDiario();
 			ConteudosRepository repositorio = new ConteudosRepository(conexao);
@@ -137,52 +134,8 @@ public class Inserir implements Initializable {
 
 	}
 
-	// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+	
 
-	/**
-	 * Handles the HTTP <code>GET</code> method.
-	 *
-	 * @param request  servlet request
-	 * @param response servlet response
-	 * @throws ServletException if a servlet-specific error occurs
-	 * @throws IOException      if an I/O error occurs
-	 */
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-		throws ServletException, IOException {
-		try {
-			processRequest(request, response);
-		} catch (SQLException ex) {
-			Logger.getLogger(Inserir.class.getName()).log(Level.SEVERE, null, ex);
-		}
-	}
-
-	/**
-	 * Handles the HTTP <code>POST</code> method.
-	 *
-	 * @param request  servlet request
-	 * @param response servlet response
-	 * @throws ServletException if a servlet-specific error occurs
-	 * @throws IOException      if an I/O error occurs
-	 */
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-		throws ServletException, IOException {
-		try {
-			processRequest(request, response);
-		} catch (SQLException ex) {
-			Logger.getLogger(Inserir.class.getName()).log(Level.SEVERE, null, ex);
-		}
-	}
-
-	/**
-	 * Returns a short description of the servlet.
-	 *
-	 * @return a String containing servlet description
-	 */
-	@Override
-	public String getServletInfo() {
-		return "Short description";
-	}// </editor-fold>
-
+	
 }
+*/

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.diario.controllers.ModalAdicionarController">
+    <children>
+        <Label prefHeight="65.0" prefWidth="446.0" text="Adicionar Departamento" StackPane.alignment="TOP_LEFT">
+            <font>
+                <Font size="36.0" />
+            </font>
+            <padding>
+                <Insets top="12.0" />
+            </padding>
+            <StackPane.margin>
+                <Insets left="24.0" top="12.0" />
+            </StackPane.margin>
+        </Label>
+        <Label fx:id="aviso" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" style="-fx-background-color: red;" textAlignment="RIGHT" textFill="WHITE" StackPane.alignment="TOP_RIGHT">
+            <font>
+                <Font size="14.0" />
+            </font>
+            <StackPane.margin>
+                <Insets right="30.0" top="42.0" />
+            </StackPane.margin>
+        </Label>
+        <VBox prefHeight="200.0" prefWidth="100.0">
+            <children>
+                <HBox alignment="TOP_RIGHT" prefHeight="65.0" prefWidth="601.0" />
+                <HBox prefHeight="75.0" prefWidth="800.0">
+                    <children>
+                        <Label text="Nome" textFill="#29a58c">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="24.0" right="15.0" />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="nomeTf" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Nome" style="-fx-border-color: #29A58C;">
+                            <HBox.margin>
+                                <Insets top="4.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="120.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="127.0" prefWidth="800.0">
+                    <children>
+                        <Label text="Campus" textFill="#29a58c">
+                            <HBox.margin>
+                                <Insets left="24.0" right="15.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <ChoiceBox fx:id="campusCb" prefWidth="150.0" style="-fx-background-color: #FAFAFA; -fx-border-color: #29A58C;">
+                            <HBox.margin>
+                                <Insets top="4.0" />
+                            </HBox.margin>
+                        </ChoiceBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="32.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="800.0">
+                    <children>
+                        <Button fx:id="adicionarBtn" mnemonicParsing="false" onAction="#adicionarDepartamento" prefWidth="135.0" style="-fx-background-color: #29A58C;" text="Adicionar" textFill="#fdfbf9">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button fx:id="cancelarBtn" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#cancelar" prefHeight="51.0" prefWidth="131.0" style="-fx-background-color: #E53935;" text="Cancelar" textFill="#fdfbf9">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="16.0" right="30.0" />
+                            </HBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                </HBox>
+            </children>
+            <StackPane.margin>
+                <Insets />
+            </StackPane.margin>
+        </VBox>
+    </children>
+</StackPane>

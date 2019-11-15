@@ -6,7 +6,7 @@
 
 package app.diario.DiarioD;
 
-import diario.diario.conteudos.ConteudosModel;
+/*
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,17 +24,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import a
-/**
- *
- * @author User
- */
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 public class ControllerTable implements Initializable{
    
-    @FXML
-    private TableView<ConteudosModel> table;
   
     @FXML
     private TableColumn<ConteudosModel, String> Etapa;
@@ -48,39 +44,60 @@ public class ControllerTable implements Initializable{
     @FXML
     private TableColumn<ConteudosModel, Button> Editar;
     @FXML
-    private TableColumn<ConteudosModel, Button> Faltas;
+    private Label cpf;
+    @FXML
+    private TableView<?> table;
  
  
-     public static ObservableList<ConteudosModel> oblist = FXCollections.observableArrayList();
+    // public static ObservableList<ConteudosModel> oblist = FXCollections.observableArrayList();
     
     public List<ConteudosModel>  ExibeConteudos() throws SQLException{
+        return null;
         
-       DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-       Connection conecxao =  DriverManager.getConnection("jdbc:mysql://localhost:3306/diario","root","123456"); 
-       PreparedStatement st = conecxao.prepareStatement("SELECT * FROM `conteudos` WHERE `idDisciplinas` = 1");//Precisa colocar id da disciplina como parametro; 
-       ResultSet rs = st.executeQuery();
-       List<ConteudosModel> Conteudoslinked = new LinkedList();
-       ConteudosRepository consultar = new ConteudosRepository(conecxao);
-       List ListaC = consultar.consulta((app.diario.DiarioD.ConteudosModel) Conteudoslinked);    
-       st.close();
-       conecxao.close();    
-       return  ListaC;
+       /*DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+       List<ConteudosModel> ListaC;
+        try (Connection conecxao = DriverManager.getConnection("jdbc:mysql://localhost:3306/diario","root","123456")) {
+            ConteudosModel modelo =new ConteudosModel();
+            ConteudosRepository consultar = new ConteudosRepository(conecxao);
+            ListaC = consultar.consulta(modelo);
+          
+        }    
+       return  ListaC;*//*
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        /*  List ListaC=null;
         try {
-            //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            oblist=(ObservableList<ConteudosModel>) ExibeConteudos();
+             ListaC = ExibeConteudos();
         } catch (SQLException ex) {
             Logger.getLogger(ControllerTable.class.getName()).log(Level.SEVERE, null, ex);
         }
-      table.refresh();
-      Conteudo.setCellValueFactory(new PropertyValueFactory<>("idDepto"));
-      Data.setCellValueFactory(new PropertyValueFactory<>("Data"));
-      Etapa.setCellValueFactory(new PropertyValueFactory<>("Etapa"));
-      Faltas.setCellValueFactory(new PropertyValueFactory<>("Faltas"));
-      Deletar.setCellValueFactory(new PropertyValueFactory<>("Deletar"));
-      Editar.setCellValueFactory(new PropertyValueFactory<>("Editar"));
-      table.setItems(oblist);
+      
+       Etapa.setCellValueFactory(new PropertyValueFactory<>("IdEtapa"));
+       Data.setCellValueFactory(new PropertyValueFactory<>("Data"));
+       Conteudo.setCellValueFactory(new PropertyValueFactory<>("Conteudo"));
+       Table.setItems(FXCollections.observableArrayList(ListaC));
+       Table.getColumns().addAll(Etapa,Data,Conteudo);
+        
+      *//* 
     }
+    public static void hey(ActionEvent event) {
+        System.out.println("AAAA");}
 }
+
+        /*  List ListaC=null;
+        try {
+             ListaC = ExibeConteudos();
+        } catch (SQLException ex) {
+            Logger.getLogger(ControllerTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
+       Etapa.setCellValueFactory(new PropertyValueFactory<>("IdEtapa"));
+       Data.setCellValueFactory(new PropertyValueFactory<>("Data"));
+       Conteudo.setCellValueFactory(new PropertyValueFactory<>("Conteudo"));
+       Table.setItems(FXCollections.observableArrayList(ListaC));
+       Table.getColumns().addAll(Etapa,Data,Conteudo);
+        
+     
+    }
+}*/

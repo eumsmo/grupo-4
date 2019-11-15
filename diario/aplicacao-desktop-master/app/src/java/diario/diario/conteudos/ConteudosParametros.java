@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package diario.diario.conteudos;
-
+/*
 import diario.diario.views.ExcecaoPadrao;
 
-import javax.servlet.http.HttpServletRequest;
+
 import java.sql.Date;
 
 /**
  * @author juanr
- */
+ 
 public class ConteudosParametros extends ConteudosModel {
 
 	protected String tipo;
@@ -26,7 +26,7 @@ public class ConteudosParametros extends ConteudosModel {
 		setParametros(request);
 	}
 
-	/* UTIL */
+	
 	public static boolean existe(HttpServletRequest req, String parametro) {
 		return req.getParameter(parametro) != null;
 	}
@@ -91,7 +91,7 @@ public class ConteudosParametros extends ConteudosModel {
 		}
 	}
 
-	/* ERROS */
+	
 	public ExcecaoPadrao erroDecimal(String parametro) {
 		return new ExcecaoPadrao(parametro + " deve ser decimal!", "O parametro " + parametro + " não está no formato correto");
 	}
@@ -108,7 +108,7 @@ public class ConteudosParametros extends ConteudosModel {
 		return new ExcecaoPadrao(parametro + " não pode estar vazio!", "O parametro " + parametro + " não pode estar vazio");
 	}
 
-	/* Getters e Setters */
+
 	public void setId(String id) throws ExcecaoPadrao {
 		try {
 			this.id = Integer.valueOf(id);
@@ -170,3 +170,4 @@ public class ConteudosParametros extends ConteudosModel {
 	}
 
 }
+*/

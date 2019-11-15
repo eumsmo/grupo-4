@@ -5,32 +5,29 @@
  */
 package app.diario.diario.FXML;
 
-import app.diario.diarioD.ModelTable;
-import java.io.IOException;
+import app.diario.DiarioD.ConteudosModel;
+
+
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -38,82 +35,81 @@ import javafx.stage.Stage;
  * @author User
  */
 public class DiarioProfessorController implements Initializable {
-    @FXML
-    private TableView<ModelTable> table;
 
     @FXML
-    private TableColumn<ModelTable, String> Etapa;
+    private TableColumn<ConteudosModel, String> Etapa;
     @FXML
-    private TableColumn<ModelTable, String> Data;
-
+    private TableColumn<ConteudosModel, String> Data;
+  
     @FXML
-    private TableColumn<ModelTable, String> Conteudo;
+    private TableColumn<ConteudosModel, String> Conteudo;
     @FXML
-    private TableColumn<ModelTable, Button> Deletar;
+    private TableColumn<ConteudosModel, Button> Deletar;
     @FXML
-    private TableColumn<ModelTable, Button> Editar;
+    private TableColumn<ConteudosModel, Button> Editar;
     @FXML
-    private TableColumn<ModelTable, Button> Faltas;
-
-
-     public static ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
-
-    public List<ModelTable>  ExibeConteudos() throws SQLException{
-
-       DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-        try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/diario","root","");
-             PreparedStatement st = conexao.prepareStatement("SELECT * FROM `conteudos` WHERE `idDisciplinas` = 1")) {
-            ResultSet rs = st.executeQuery();
-            //  List<DescartadoLista> descartes = new LinkedList();
-            List ListaD = null;
-            while ( rs.next()) {
-                String IdC = rs.getString("id");
-                String Data = rs.getString("datas");
-                String idDisciplinas = rs.getString("idDisciplinas");
-                String conteudos = rs.getString("conteudos");
-                String idEtapas = rs.getString("idEtapas");
-
-
-
-
-                ModelTable Aux= new ModelTable(idEtapas,Data,conteudos,Editar,Faltas,Editar);
-                oblist.add(Aux);
-
-                //  System.out.println(""+IdA +" :Acervos  moivos "+motivos+"\n");
-                // descartes.add(new DescartadoLista(IdA,motivos));
-
-            }
-        }
+    private Label cpf;
+    @FXML
+    private TableView<ConteudosModel> Table;
+ 
+ 
+     public static ObservableList<ConteudosModel> oblist = FXCollections.observableArrayList();
+    
+    public List<ConteudosModel>  ExibeConteudos() throws SQLException{
+      
+          
+           DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+       Connection conexao =  DriverManager.getConnection("jdbc:mysql://localhost:3306/diario","root",""); 
+       PreparedStatement st = conexao.prepareStatement("SELECT * FROM conteudos");
+       ResultSet rs = st.executeQuery();
+       //List<ConteudosModel> Cont = new LinkedList();
+        List ListaD = null;
+         while ( rs.next()) {
+       int IdC = Integer.parseInt(rs.getString("id")); 
+       int Etapa = Integer.parseInt (rs.getString("id-Etapas")); 
+       int Disciplina =  Integer.parseInt(rs.getString("idDisciplinas"));  
+       String Conteudos = rs.getString("Conteudos");
+       String datas = rs.getString("datas");
+      
+   
+    
+    
+        ConteudosModel Aux= new ConteudosModel(Etapa,Disciplina,Conteudos, datas);
+          oblist.add(Aux);
+         
+       System.out.println(""+IdC+" :Acervos  moivos "+Conteudos+"\n");
+      // descartes.add(new DescartadoLista(IdA,motivos));   
+   
+   }    
+   st.close();
+   conexao.close();
    return      oblist;
-
-
+  
     }
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        table.refresh();
-      //  col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        Conteudo.setCellValueFactory(new PropertyValueFactory<>("idDepto"));
-        Data.setCellValueFactory(new PropertyValueFactory<>("Data"));
-        Etapa.setCellValueFactory(new PropertyValueFactory<>("Etapa"));
-        Faltas.setCellValueFactory(new PropertyValueFactory<>("Faltas"));
-        Deletar.setCellValueFactory(new PropertyValueFactory<>("Deletar"));
-        Editar.setCellValueFactory(new PropertyValueFactory<>("Editar"));
-
-        table.setItems(oblist);
+          List ListaC=null;
+        try {
+            ListaC = ExibeConteudos();
+        } catch (SQLException ex) {
+            Logger.getLogger(DiarioProfessorController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+ 
+       Etapa.setCellValueFactory(new PropertyValueFactory<>("IdEtapa"));
+       Data.setCellValueFactory(new PropertyValueFactory<>("Data"));
+       Conteudo.setCellValueFactory(new PropertyValueFactory<>("Conteudo"));
+       Table.setItems(FXCollections.observableArrayList(ListaC));
+       Table.getColumns().addAll(Etapa,Data,Conteudo);
+     
+        
+       
+        
+      
     }
-     private void sobre(ActionEvent event) throws IOException{
-        Parent sobre = FXMLLoader.load(getClass().getResource("ModalDadosD.fxml"));
 
-         Stage modalAdicionar = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("ModalDadosD.fxml"));
-        modalAdicionar.setScene(new Scene(root));
-        modalAdicionar.initOwner(((Node)event.getSource()).getScene().getWindow());
-        modalAdicionar.initModality(Modality.APPLICATION_MODAL);
-        modalAdicionar.showAndWait();
-       // loadTableData();
-    }  
+
+       
+     
     
 }

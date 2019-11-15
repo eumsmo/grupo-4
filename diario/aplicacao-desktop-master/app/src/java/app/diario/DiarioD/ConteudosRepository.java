@@ -5,19 +5,21 @@
  */
 package app.diario.DiarioD;
 
-//import app.diario.DiarioD.ConteudosModel;
-import diario.diario.diario.DiarioModel;
+
+//import diario.diario.diario.DiarioModel;
 import diario.diario.diario.DiarioRepository;
 import diario.diario.views.ExcecaoPadrao;
+import diario.diario.diario.DiarioModel;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * @author juanr
- */
+ 
 public class ConteudosRepository {
 
 	protected Connection conexao;
@@ -112,7 +114,7 @@ public class ConteudosRepository {
 			return r != 0;
 		} else {
 			query = "SELECT id FROM conteudos";
-			ArrayList<ConteudosModel> resultado = consulta(filtro);
+			ArrayList<ConteudosModel> resultado = (ArrayList<ConteudosModel>) consulta(filtro);
 
 			int pos = 1;
 			for (ConteudosModel modelo : resultado) {
@@ -147,11 +149,12 @@ public class ConteudosRepository {
 
 	}
 
-	public ArrayList consulta(ConteudosModel modelo) throws SQLException {
-		return consulta(modelo, null);
+	public List<ConteudosModel> consulta(ConteudosModel modelo) throws SQLException {
+		
+            return consulta(modelo, null);
 	}
 
-	public ArrayList consulta(ConteudosModel modelo, String tipo) throws SQLException {
+	public List<ConteudosModel> consulta(ConteudosModel modelo, String tipo) throws SQLException {
 		String query = "SELECT * FROM conteudos";
 		PreparedStatement st;
 
@@ -161,20 +164,20 @@ public class ConteudosRepository {
 			filtros.put("id", modelo.getId());
 		} else {
 			if (modelo.getIdEtapa() != null) {
-				filtros.put("id-etapas", modelo.getIdEtapa());
+				filtros.put("idEtapas", modelo.getIdEtapa());
 			}
 			if (modelo.getIdDisciplina() != null) {
-				filtros.put("id-disciplinas", modelo.getIdDisciplina());
+				filtros.put("idDisciplinas", modelo.getIdDisciplina());
 			}
 			if (modelo.getData() != null) {
-				filtros.put("data", modelo.getData());
+				filtros.put("datas", modelo.getData());
 			}
 			if (modelo.getConteudo() != null) {
 				filtros.put("conteudos", modelo.getConteudo());
 			}
-			if (modelo.getValor() != null) {
+			/*if (modelo.getValor() != null) {
 				filtros.put("valor", modelo.getValor());
-			}
+			}*//*
 		}
 
 		if (filtros.size() > 0 || tipo != null) {
@@ -207,18 +210,18 @@ public class ConteudosRepository {
 
 		pos = 1;
 		for (String filtro : filtros.keySet()) {
-			if (filtro.equals("id-etapas") || filtro.equals("id-disciplinas")) {
+			if (filtro.equals("idEtapas") || filtro.equals("id-disciplinas")) {
 				st.setInt(pos, (Integer) filtros.get(filtro));
 			}
-			if (filtro.equals("data")) {
+			if (filtro.equals("datas")) {
 				st.setDate(pos, (Date) filtros.get(filtro));
 			}
 			if (filtro.equals("conteudos")) {
 				st.setString(pos, (String) filtros.get(filtro));
 			}
-			if (filtro.equals("valor")) {
+			/*if (filtro.equals("valor")) {
 				st.setDouble(pos, (Double) filtros.get(filtro));
-			}
+			}*//*
 
 			pos++;
 		}
@@ -236,3 +239,4 @@ public class ConteudosRepository {
 		return lista;
 	}
 }
+*/

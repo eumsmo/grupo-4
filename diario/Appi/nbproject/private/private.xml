@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/ModalEditar.fxml</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/repository/DepartamentoRepository.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/main/MainDepartamentos.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/TabelaDepartamentos.fxml</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/ModalAdicionar.fxml</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/model/Campus.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/ModalRemover.fxml</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/model/ConteudosModel.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/utils/ConnectionFactory.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/controllers/TableController.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/model/DiarioModel.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/utils/Validacao.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/model/Departamento.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Appi/src/app/diario/diario/repository/ConteudosRepository.java</file>
+        </group>
+    </open-files>
+</project-private>
