@@ -1,1 +1,41 @@
 
+*{
+}
+
+.button{
+    
+    -fx-text-fill: #FDFBF9;
+    -fx-padding: 15px;
+    -fx-background-insets: 2px;
+    -fx-background-radius: 2px;
+    -fx-cursor: hand;
+    -fx-background-color:  #29a58c;
+    
+}
+.identificadores{
+    -fx-font-size: 20px;
+    -fx-text-fill:#29a58c;
+}
+.identificandos{
+    -fx-font-size: 20px;
+    -fx-text-fill:BLACK;
+    
+}
+.titulo{
+    -fx-font-size: 30px;
+    
+}
+
+.aviso{
+    -fx-padding: 5px;
+}
+
+.aviso-erro{
+    
+    -fx-background-color: red;
+}
+
+.aviso-sucesso{
+    
+    -fx-background-color:  #248f24;
+}
