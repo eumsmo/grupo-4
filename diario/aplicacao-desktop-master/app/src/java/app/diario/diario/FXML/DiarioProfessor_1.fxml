@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane alignment="TOP_CENTER" maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../../../../../resources/app/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.diario.diario.FXML.DiarioProfessorController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#29a58c" height="47.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
+      <Label text="Diário-Professor" textFill="#fdfbf9" StackPane.alignment="TOP_LEFT">
+         <StackPane.margin>
+            <Insets left="10.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" maxHeight="488.0" maxWidth="900.0" minHeight="300.0" minWidth="900.0" prefHeight="488.0" prefWidth="900.0" translateY="-20.0" StackPane.alignment="BOTTOM_CENTER">
+        <columns>
+            <TableColumn fx:id="Etapa" maxWidth="433.0" minWidth="200.0" prefWidth="427.0" resizable="false" text="Professor" />
+            <TableColumn fx:id="Data" maxWidth="606.0" minWidth="48.0" prefWidth="272.0" resizable="false" text="Disciplina" />
+            <TableColumn fx:id="Etapa1" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" resizable="false" />
+        </columns>
+         <StackPane.margin>
+            <Insets top="100.0" />
+         </StackPane.margin>
+      </TableView>
+      <Label fx:id="Disciplina" styleClass="titulo" text="Seleção Professor" StackPane.alignment="TOP_CENTER">
+         <font>
+            <Font size="32.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="73.0" />
+         </StackPane.margin>
+      </Label>
+      <Button mnemonicParsing="false" text="Voltar" StackPane.alignment="BOTTOM_LEFT">
+         <StackPane.margin>
+            <Insets bottom="20.0" left="20.0" />
+         </StackPane.margin>
+      </Button>
+   </children>
+</StackPane>
