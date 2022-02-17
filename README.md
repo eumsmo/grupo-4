@@ -1,3 +1,3 @@
 # grupo-4
-O melhor grupo do trabalho final
-Pode dar quanto commit quiser nesse aqui, mas tenta seguir as especificações de organização do Git que a gerência passou
+Antigo repositório reservado ao grupo 4 para o trabalho final do segundo ano do curso de informática no CEFET-MG
+Os arquivos e outras modificações foram movidas para outro repositório, que se encontra na organização INF2-2019, onde todos os grupos poderiam commitar
